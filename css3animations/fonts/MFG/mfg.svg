@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2014 by original authors @ fontello.com</metadata>
+<defs>
+<font id="mfg" horiz-adv-x="1000" >
+<font-face font-family="mfg" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="cancel" unicode="&#xe800;" d="m0 90q0 36 26 62l195 195l-195 196q-26 25-26 61t26 61t61 25t61-25l196-196l195 196q25 25 61 25t61-25t25-61t-25-61l-195-196l195-195q25-26 25-62t-25-61q-25-25-61-25t-61 25l-195 195l-196-195q-25-25-61-25t-61 25q-26 26-26 61z" horiz-adv-x="686.5" />
+</font>
+</defs>
+</svg>

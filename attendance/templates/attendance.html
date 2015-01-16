@@ -1,0 +1,209 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="description" content="">
+                    <meta name="author" content="">
+                        
+                        <title>ATTENDANCE</title>
+                        
+                        <!-- Bootstrap core CSS -->
+                        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+                            
+                            <!-- Custom CSS for the 'Round About' Template -->
+                            <link href="{% static "css/round-about.css" %}" rel="stylesheet">
+                                
+    </head>
+    
+    <body>
+        
+         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand" href="/home/#myCarousel"><strong>COURSE MANAGEMENT SYSTEM</strong></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/courses/">Courses</a><!--Done-->
+                    </li>
+                    <li><a href="/attendance/">Attendance</a><!--Doing-->
+                    </li>
+                    <li><a href="/polls/">Polls</a><!--Done-->
+                    </li>
+                    <li><a href="/discussion/">Discussion</a>
+                    </li>
+                    <li><a href="/calendar/">Calendar</a>
+                    </li>
+                    <li><a href="/help/">Help</a>
+                    </li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ username }}<b class="caret"></b></a>
+                            <ul class="dropdown-menu dropdown-tasks">
+                                <li class="active"><a href=""></a>
+                                </li>
+                                <li><a href="/changepassword/">Change Password</a>
+                                </li>
+                                <li><a href="/accounts/logout/">Logout</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+        
+        <div class="container">
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        <small></small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/home/">Home</a>
+                        </li>
+                        <li class="active">Attendance</a></li>
+                    </ol>
+                </div>
+                
+            </div>
+
+            {% if ADD_STATUS == 1 %}
+            
+            <div class="alert alert-info alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                Attendance <a class="alert-link" target="_blank" href="/help/"></a> Submission was Successful.
+                <p></p>
+            </div>
+
+
+            {% endif %}
+
+
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">ATTENDANCE
+                        <small></small>
+                        
+            </div>
+        
+        
+        <div class="row">
+            <div class="col-lg-8">
+                
+                <!-- blog entry -->
+                <!--<h1><a href="#">Polls</a>
+                 </h1>-->
+                <!--<p class="lead"><a href="polls.html">Polls</a>
+                 </p>
+                <hr>
+                <p>
+                <!--<span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>-->
+                
+                
+                
+                
+                
+                <!--CODE HERE-->
+                
+                <ul>
+                {% for course in course_list %}
+                <ul>
+                  <h3>{{ course.Course_Name }}
+                  <small>{{ course.Course_Number }}</small></h3>
+                    <p><p>
+              {% if check_value == 0 %} 
+
+
+                <form role="form" action="/attendance/attendanceteacher/" method="POST">
+                {% csrf_token %}
+                <input type="text" value = {{ course.Course_Name }} name="cn" hidden="hidden" /> 
+                <input type="submit" name="attend" value="Attendance Record"/>
+                </form>
+
+                  <p></p>
+                <form role="form" method="post" action="/attendance/takenewattendance/">
+                {% csrf_token %}
+                <input type="text" value = {{ course.Course_Name }} name="cn" hidden="hidden" />
+                <button type="submit" name="attend_new" value="attend_new" >Take Attendance</button>
+                </form>
+                  <p></p>
+
+                <form role="form" method="post" action="/attendance/attendancelist/">
+                {% csrf_token %}
+                <input type="text" value = {{ course.Course_Name }} name="coursename_list" hidden="hidden" />
+                <input type="submit" name="attend_list" value="Attendance Report"/>
+                </form>
+                  <p></p>
+
+                    <hr>
+              {% endif %} 
+
+
+              {% if check_value == 1 %}
+
+              <form role="form" action="subjectselected/" method="POST">
+              {% csrf_token %}
+              <input type="text" value = {{ course.Course_Name }} name="student_cn" hidden="hidden" /> 
+              <input type="submit" name="attend_student" value="View Attendance Report"/>
+              </form>
+
+              {% endif %}
+
+                
+                </ul>
+                {% endfor %}
+                </ul>
+              
+                
+                <!-- <hr> -->
+                </p>
+                
+                
+                
+                
+            </div>
+        <!-- /container -->
+        
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="list-inline">
+                            <center>
+                            </center>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- JavaScript -->
+        <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+        
+    </body>
+    
+</html>
+
+
+

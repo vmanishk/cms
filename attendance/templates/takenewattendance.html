@@ -1,0 +1,278 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+                    <script src="{% static "js/bootstrap.js" %}"></script>
+
+                <meta charset="utf-8">
+        <title>Take Attendance</title>
+        <link rel="stylesheet" href="{% static "css/date.css" %}">
+        <script src="{% static "js/date-js.js" %}"></script>
+        <script src="{% static "js/date-ui.js" %}"></script>
+        <link rel="stylesheet" href="{% static "css/demo.css" %}">
+        <script>
+        $(function() {
+        $( "#datepicker" ).datepicker({ dateFormat : 'yy-mm-dd' });
+        });
+        </script>
+
+
+        <link rel="stylesheet" href="{% static "js/jquery-ui.css" %}">
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="description" content="">
+                    <meta name="author" content="">
+                        
+                        <title>Take Attendance</title>
+                        
+                        <!-- Bootstrap core CSS -->
+                        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+                            
+                            <!-- Add custom CSS here -->
+                            <link href="{% static "css/blog-home.css" %}" rel="stylesheet">
+                                
+                                </head>
+    
+    <body>
+        
+       
+        
+         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand" href="/home/#myCarousel"><strong>COURSE MANAGEMENT SYSTEM</strong></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/courses/">Courses</a><!--Done-->
+                    </li>
+                    <li><a href="/attendance/">Attendance</a><!--Doing-->
+                    </li>
+                    <li><a href="/polls/">Polls</a><!--Done-->
+                    </li>
+                    <li><a href="/discussion/">Discussion</a>
+                    </li>
+                    <li><a href="/calendar/">Calendar</a>
+                    </li>
+                    <li><a href="/help/">Help</a>
+                    </li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ my_username }}<b class="caret"></b></a>
+                            <ul class="dropdown-menu dropdown-tasks">
+                                <li class="active"><a href=""></a>
+                                </li>
+                                <li><a href="/feedback/">Feedback</a>
+                                </li>
+                                <li><a href="/changepassword/">Change Password</a>
+                                </li>
+                                <li><a href="/accounts/logout/">Logout</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+        
+        <div class="container">
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        <small></small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/home/">Home</a>
+                        </li>
+                        <li class="active"><a href="/attendance/">Attendance</a></li>
+                        </li>
+                        <li class="active">Take Attendance</li>
+                    </ol>
+                </div>
+                
+            </div>
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    
+                        
+                        
+                        <div class="row">
+                            <div class="col-lg-6">
+                                
+                                <form role="form" method="post" action="/attendance/takenewattendance/">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="id_newattendance" value="{{attend_main.id}}"
+
+
+                                    
+                                    
+                                    
+                                    
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input type="text" name="todays_date" id="datepicker" class="Datepicker" />
+										
+										{% if same_date == 1 %}
+
+            
+            <div class="alert alert-info alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                Attendance <a class="alert-link" target="_blank" href="/help/"></a> already exists for this day.
+                <p></p>
+            </div>
+
+
+                                        
+                                        {% endif %}
+										
+										{% if same_date == 2 %}
+            
+            <div class="alert alert-info ">
+                <button type="button" class="close"  aria-hidden="true">&times;</button>
+                Data Field <a class="alert-link" target="_blank" href="/help/"></a>cannot be left blank.
+                <p></p>
+            </div>
+
+                                        {% endif %}
+										
+										{% if same_date == 3 %}
+
+            
+            <div class="alert alert-info alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                Data Format <a class="alert-link" target="_blank" href="/help/"></a> should be YYYY-MM-DD.
+                <p></p>
+            </div>
+                                        {% endif %}
+                                            </div></center>
+                                    </div>
+                            </div>
+                        
+                        
+                        
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h2>Students Attendance</h2>
+                                <div class="table-responsive">
+                                    
+
+                                    <table class="table table-bordered table-hover tablesorter">
+                                        <thead>
+                                            <tr>
+                                                
+                                                <th>Roll no <i class="fa fa-sort"></i></th>
+                                                <th>Name <i class="fa fa-sort"></i></th>
+                                                <th>Present<i class="fa fa-sort"></i></th>
+                                                <th>Absent <i class="fa fa-sort"></i></th>
+                                                
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                           
+                                           
+                                           <!--CODE HERE TO PRINT THE PAGE FOR THE STUDENT-->
+                                           
+                                        
+
+
+
+                                            {% for user in new_date_objects %}
+
+                                                
+                                           
+                                           <tr>
+
+                                                   <td>{{ user.profile.uid }}</td>
+                                                   <td>{{ user }}</td>
+
+
+                                                    <td>
+                                                    <input type="radio" name="status{{forloop.counter}}"  value="1" checked>
+                                                    </td>
+                                                    <td>
+                                                    <input type="radio" name="status{{forloop.counter}}" value="0" >
+                                                    </td>
+                                            </tr>
+                                            {% endfor %}
+
+
+
+                                            
+
+
+
+                                            
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        
+            </div>
+                        <!--CODE HERE TO SUBMIT THE INFO TO DATABASE-->
+                        <input type="hidden" name="selected_newcourse" value="{{selected_course.Course_Name}}">
+                        <button type="submit" name="new_attend_update" value="new_attend_update" class="btn btn-default">Save Attendance</button>
+
+                    </form>
+            
+            <div class="row">
+                <div class="col-lg-8">
+                    
+                
+              
+            <hr>
+            
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p></p>
+                    </div>
+                </div>
+            </footer>
+            
+        </div>
+        
+        
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="list-inline">
+                            <center>
+                            </center>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- JavaScript -->
+
+                    <!-- JavaScript -->
+                    
+                    
+        
+    </body>
+    
+</html>

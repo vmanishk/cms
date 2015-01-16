@@ -1,0 +1,169 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="description" content="">
+                    <meta name="author" content="">
+                        
+                        <title>Discussion</title>
+                        
+<link rel="canonical" href="http://www.androidpolice.com/" />
+<link rel="next" href="http://www.androidpolice.com/page/2/" />
+<link rel="author" href="https://plus.google.com/107797272029781254158"/>
+<link rel="publisher" href="https://plus.google.com/+AndroidPolice"/>
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Android Police - Android News, Apps, Games, Phones, Tablets" />
+<meta property="og:url" content="http://www.androidpolice.com/" />
+<meta property="og:site_name" content="Android Police - Android News, Apps, Games, Phones, Tablets" />
+                        <!-- Bootstrap core CSS -->
+                        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+                            
+                            <!-- Custom CSS for the 'Heroic Features' Template -->
+                            <link href="{% static "css/heroic-features.css" %}" rel="stylesheet">
+                                </head>
+    
+    <body>
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                    <a class="navbar-brand" href="/home/"><strong>COURSE MANAGEMENT SYSTEM</strong></a>
+                </div>
+                
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/courses/">Courses</a>
+                        </li>
+                        <li><a href="/attendance/">Attendance</a>
+                        </li>
+                        <li><a href="/polls/">Polls</a>
+                        </li>
+                        <li><a href="/discussion/">Discussion</a>
+                        </li>
+                        <li><a href="/calendar/">Calendar</a>
+                        </li>
+                        <li><a href="/help/">Help</a>
+                        </li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ username }}<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="active"><a href=""></a>
+                                    </li>
+                                    <li><a href="/changepassword/">Change Password</a>
+                                    </li>
+                                    <li><a href="/loginpage/">logout</a>
+                                    </li>
+                                </ul>
+                                </ul>
+                        </li>
+                    </ul>
+                    </ul>
+                    </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+            
+        </nav>
+         <div class="container">
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        <small></small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/home/">Home</a>
+                        </li>
+						<li><a href="/discussion/">Discussions</a>
+                        </li>
+                        <li class="active">Discussion</li>
+                    </ol>
+                </div>
+                
+            </div>
+
+    <div class="row">
+            <div class="col-lg-8">
+
+                <!-- blog entry -->
+                <!--<h1><a href="#">Polls</a>
+                </h1>-->
+                <!--<p class="lead"><a href="polls.html">Polls</a>
+                </p>-->
+                <hr>
+                
+                    <!--<span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>-->
+                <h2><b>{{ article.title }}</b></h2>
+                    
+                     by <a href="/app/usr/{{article.article_creator}}"> {{article.article_creator}}</a>
+                    at {{ article.pub_date }}
+                    <p><h4>{{ article.body }}</h4></p>
+					
+                    
+
+                    {% if article.thumbnail %}
+                        <p><img src="/static/{{article.thumbnail}}" width="400"/></p>
+                    {% endif %}
+
+                <p>
+
+<!--
+        <div class="col-lg-12 text-center">
+            <h1>{{ article.title }}</h1>
+            <p>{{ article.body }}</p>
+        </div>-->
+        <form method="post"> {% csrf_token %}
+            <input type="hidden" name="article_id" value="{{article.id}}">
+			<input type="submit" name="upvote" value="Upvote">
+			<button><a href="/app/add/{{ article.id }}/">Comment</a></button>
+			<br></br>
+			<p>Total Upvotes : {{ article.num_upvotes }}</p>
+        </form>  
+
+        <b><hr></b>
+
+        {% if comments.count > 0 %}
+			<h4>COMMENTS </h4>
+			<hr>
+        {% for comment in comments %}
+        <div class="col-lg-12">
+            <p>{{ comment.body }}</p>
+            <h5>by <a href="/app/usr/{{comment.comment_creator}}"> {{comment.comment_creator}}</a> </h5>
+			<h5>at {{comment.pub_date}}</h5>
+		
+			<hr></hr>
+        </div>
+        {% endfor %}
+
+        {% else %}
+
+            <p>No Comments to Display</p>
+
+        {% endif %}
+		<hr>
+        <!-- /.container -->
+        <button><a href="/app/add/{{ article.id }}/">Comment</a></button>
+		<hr><br></br>
+        <!-- JavaScript -->
+        <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+        
+    </body>
+    
+</html>

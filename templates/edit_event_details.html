@@ -1,0 +1,192 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<title> Edit event to calendar </title>
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS for the 'Round About' Template -->
+    <link href="{% static "css/round-about.css" %}" rel="stylesheet">
+	 <link rel="stylesheet" href="{% static "css/datepicker.css" %}" rel="stylesheet">
+		<link rel="stylesheet" media="all" type="text/css" href="{% static "jquery-ui-timepicker-addon.css" %}" />
+	<script type="text/javascript" src="{% static "bootstrap-datepicker.js"%}" charset="UTF-8"></script>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand" href="/home/#myCarousel"><strong>COURSE MANAGEMENT SYSTEM</strong></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/courses/">Courses</a><!--Done-->
+                    </li>
+                    <li><a href="/attendance/">Attendance</a><!--Doing-->
+                    </li>
+                    <li><a href="/polls/">Polls</a><!--Done-->
+                    </li>
+                    <li><a href="/discussion/">Discussion</a>
+                    </li>
+                    <li><a href="/calendar/">Calendar</a>
+                    </li>
+                    <li><a href="/help/">Help</a>
+                    </li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }}<b class="caret"></b></a>
+                            <ul class="dropdown-menu dropdown-tasks">
+                                <li class="active"><a href=""></a>
+                                </li>
+                                <li><a href="/changepassword/">Change Password</a>
+                                </li>
+                                <li><a href="/accounts/logout/">Logout</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+	</nav>
+	
+	<div class="container">
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        <small></small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/home/">Home</a>
+                        </li>
+                        <li><a href="/calendar/">Calendar</a>
+                        </li>
+                        <li class="active">Edit Event</li>
+                    </ol>
+                </div>
+                
+            </div>
+		
+		{% if event_edited %}
+		<div class="alert alert-info alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+<!--                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true" &times;</button>
+ -->                The <a class="alert-link" target="_blank" href="/help/"></a>Event was successfully edited.
+                <p></p>
+            </div>
+		{% endif %}
+		
+				<div class="well">
+
+                    {% if no_title %}
+                        <p>This field is required</p>
+                    {% endif %}
+
+                <h3>Title </h3>
+                <form role="form" action="/edit_event/update/" method="post">{% csrf_token %}
+                    <div class="form-group">
+<!--                         <textarea class="form-control" name="title" column="20" rows="1"></textarea>
+ -->						<input type="text" name="title" style="width: 1000px; height: 40px; padding: 2px; border: 1px solid black" placeholder="title of the event" value={{ selected_event.title }}>
+                    </div>
+
+                    {% if no_single_word %}
+                    <p>The event title must be only of one word</p>
+                    {% endif %}
+
+
+                    {% if no_url %}
+                        <p>This field is required</p>
+                    {% endif %}
+
+                    <h3>Event Link</h3>
+                    <div class="form-group">
+<!--                         <textarea class="form-control" name ="url" column="20" rows="1"></textarea>
+ -->                    	<input type="text" name="url" style="width: 1000px; height: 40px; padding: 2px; border: 1px solid black" placeholder="link to event" value={{ selected_event.url }}>
+					</div>
+
+                    {% if no_event_type %}
+                        <p>This field is required</p>
+                    {% endif %}
+
+					<h3>Event Type</h3>
+                    <div class="form-group">
+<!--                         <textarea class="form-control" name ="type" column="20" rows="1"></textarea>
+ -->                    	<input type="text" name="type" style="width: 1000px; height: 40px; padding: 2px; border: 1px solid black" placeholder="event-important/event-simple" value={{ selected_event.css_class }}>
+					</div>
+
+                    {% if no_start %}
+                        <p>This field is required in specified format</p>
+                    {% endif %}
+
+                    <h3>Start Date & Time</h3>
+                    <div class="form-group">
+<!--                         <textarea class="form-control" name ="start" column="20" rows="1"></textarea>
+ -->                        <input type="datetime" name="start" style="width: 1000px; height: 40px;  padding: 2px; border: 1px solid black" placeholder= "YYYY-MM-DD HH:MM:ss" id="start">
+                    </div>
+                    
+                    
+                    
+                    <!--  ojas please use this template and in placeholder value just write the format  -->
+                    
+                    {% if no_end %}
+                        <p>This field is required in specified format</p>
+                    {% endif %}
+                    
+                    <h3>End Date & Time</h3>
+                    <div class="form-group">
+<!--                         <textarea class="form-control" name ="end" column="20" rows="1"></textarea>
+ -->                        <input type="datetime" name="end" placeholder="YYYY-MM-DD HH:MM:ss" style="width: 1000px; height: 40px;  padding: 2px; border: 1px solid black" placeholder="endDate" id ="end">
+                    </div>
+					
+					<div class="form-group">
+					<input type="hidden" name="selected_event" value={{ selected_event.id }}>
+					</div>
+					
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+               
+            </div>
+			
+		
+            
+        
+        <!-- Load jQuery and bootstrap datepicker scripts -->
+			<script src="{% static "js/jquery-1.10.2.js" %}"></script>
+			<script src="{% static "js/bootstrap.js" %}"></script>
+			<script src="{% static "js/modern-business.js" %}"></script>
+			<script src="{% static "js/jquery.min.js" %}"></script>
+			<script src="{% static "js/bootstrap-datepicker.js" %}"></script>
+			<script type="text/javascript" src="{% static "jquery-ui-timepicker-addon.js" %}"></script>
+			<script type="text/javascript" src="{% static "jquery-ui-sliderAccess.js" %}"></script>
+			<script type="text/javascript" src="{% static "script.js" %}"></script>
+		<!--	<script type="text/javascript">
+            
+            $(document).ready(function () {
+                
+                $('#start').datepicker({
+                    format: "yyyy-mm-dd"
+                });  
+            
+            });
+			</script>
+			<script type="text/javascript">
+            
+            $(document).ready(function () {
+                
+                $('#end').datepicker({
+                    format: "yyyy-mm-dd"
+                });  
+            
+            });
+			</script>-->
+			</body>
+</html>

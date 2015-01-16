@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="description" content="">
+                    <meta name="author" content="">
+                        
+                        <title>Login Details</title>
+                        
+                        <!-- Bootstrap core CSS -->
+                        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+                            
+                            <!-- Custom CSS for the 'Heroic Features' Template -->
+                            <link href="{% static "css/heroic-features.css" %}" rel="stylesheet">
+                                </head>
+    
+    <body>
+        <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <h1><b>COURSE MANAGEMENT SYSTEM</b></h1>
+                </div>
+                
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+        <div class="container">
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        <small></small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/loginpage/">Login</a>
+                        </li>
+                        <li class="active">Login Details</li>
+                    </ol>
+                </div>
+                
+            </div>
+			
+			
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="form">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+            <div class="well">
+                <h4>Username </h4>
+                <form role="form" action="/accounts/auth/" method="post">{% csrf_token %}
+                    <div class="form-group">
+<!--                         <textarea class="form-control" name="username" column="20" rows="1"></textarea>
+ -->						<input type="text" name="username">
+                    </div>
+                    <h4>Password</h4>
+                    <div class="form-group">
+<!--                         <textarea class="form-control" name ="password" column="20" rows="1"></textarea>
+ -->                    	<input type="password" name="password">
+					</div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="/forgotpassword/"> Forgot Password ?</a>
+                </form>
+               
+            </div>
+            
+            
+            <hr>
+            
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p></p>
+                    </div>
+                </div>
+            </footer>
+            
+        </div>
+        <!-- /.container -->
+        
+        <!-- JavaScript -->
+        <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+        
+    </body>
+    
+</html>

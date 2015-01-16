@@ -1,0 +1,184 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="description" content="">
+                    <meta name="author" content="">
+                        
+                        <title>ATTENDANCE RECORD</title>
+                        
+                        <!-- Bootstrap core CSS -->
+                        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+                            
+                            <!-- Custom CSS for the 'Round About' Template -->
+                            <link href="{% static "css/round-about.css" %}" rel="stylesheet">
+                            <style type="text/css">
+                                .attend li {display: inline-block;}
+                            </style>
+                                
+                                </head>
+    
+    <body>
+        
+         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand" href="/home/#myCarousel"><strong>COURSE MANAGEMENT SYSTEM</strong></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/courses/">Courses</a><!--Done-->
+                    </li>
+                    <li><a href="/attendance/">Attendance</a><!--Doing-->
+                    </li>
+                    <li><a href="/polls/">Polls</a><!--Done-->
+                    </li>
+                    <li><a href="/discussion/">Discussion</a>
+                    </li>
+                    <li><a href="/calendar/">Calendar</a>
+                    </li>
+                    <li><a href="/help/">Help</a>
+                    </li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ my_username }}<b class="caret"></b></a>
+                            <ul class="dropdown-menu dropdown-tasks">
+                                <li class="active"><a href=""></a>
+                                </li>                                <li><a href="/changepassword/">Change Password</a>
+                                </li>
+                                <li><a href="/accounts/logout/">Logout</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+        
+        <div class="container">
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        <small></small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/home/">Home</a>
+                        </li>
+                        <li><a href="/attendance/">Attendance</a>
+                        </li>
+                        <li class="active">Attendance Record</li>
+                    </ol>
+                </div>
+                
+            </div>
+            
+            
+            
+
+            
+            
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">ATTENDANCE
+                        <small></small>
+                        
+                        </div>
+                
+                
+                
+                
+                
+                
+                
+                <ul class="attend">
+                
+                {% for date in date_list %}
+                <li>                
+                        
+                        <!-- blog entry -->
+                        <!--<h1><a href="#">Polls</a>
+                         </h1>-->
+                        <!--<p class="lead"><a href="polls.html">Polls</a>
+                         </p>
+                         <hr>
+                         <p>
+                         <!--<span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>-->
+                        
+                        
+                        
+                        
+                        
+                        <!--CODE HERE-->
+                        <!--CODE HERE TO DISPLAY ALL THE ATTENDACE IN THE DATABASE ACCORDING TO THE DATE WRTTEN-->
+                                        <form role="form" action="/attendance/takeattendance/" method="POST">
+                                        {% csrf_token %}
+                                        <input type="text" value = {{ date.id }} name="cn" hidden="hidden" /> 
+                  
+                                        <button type="submit" name="attend_stored" value="attend_stored" class="btn btn-primary">{{ date.Todays_Date }}</button>
+                                        </form>
+
+                                        <form role="form" action="/attendance/attendanceteacher/" method="POST">
+                                        {% csrf_token %}
+                                        <input type="text" value = {{ selected_course.Course_Name }} name="coursepassed" hidden="hidden" />
+                                         </form>   
+
+                                    
+
+
+                       
+                        
+                        
+                        
+                        <!--CODE THE ABOVE PART AND ALSO DISPLAY STUDENTS WISE ATTENDANCE PERCENTAGE
+                        
+                        <hr>
+                        </p>
+                        
+                        <!--Run The above code in a loop in order to print all the polls and their results and also if you wish i have left the newer and older part to code :)
+                         but you can remove them if displaying in one page-->
+                        
+                        <!-- pager -->
+                    
+                        
+                </li>
+                    <!-- /container -->
+                {% endfor %}
+                </ul>
+                
+                
+                    
+                    
+                    
+                    
+                    
+                
+                <hr>
+                    <!-- JavaScript -->
+                    <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+                    <script src="{% static "js/bootstrap.js" %}"></script>
+                    
+                    </body>
+    
+</html>
+
+

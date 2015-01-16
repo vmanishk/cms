@@ -1,0 +1,433 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="description" content="">
+                    <meta name="author" content="">
+                        
+                        <title>ATTENDANCE</title>
+                        
+                        <!-- Bootstrap core CSS -->
+                        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+                            
+                            <!-- Custom CSS for the 'Round About' Template -->
+                            <link href="{% static "css/round-about.css" %}" rel="stylesheet">
+                            <style type="text/css">.container {
+}
+
+.container .progress {
+  margin: 0 auto;
+  width: 400px;
+}
+
+.progress {
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+  height: 16px;
+  border-radius: 4px;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  -webkit-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -o-transition: 0.4s linear;
+  transition: 0.4s linear;
+  -webkit-transition-property: width, background-color;
+  -moz-transition-property: width, background-color;
+  -o-transition-property: width, background-color;
+  transition-property: width, background-color;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/*
+ * Note: using adjacent or general sibling selectors combined with
+ *       pseudo classes doesn't work in Safari 5.0 and Chrome 12.
+ *       See this article for more info and a potential fix:
+ *       http://css-tricks.com/webkit-sibling-bug/
+ */
+
+#five:checked ~ .progress > .progress-bar {
+  width: 100%;
+  background-color: #f63a0f;
+}
+
+#twentyfive:checked ~ .progress > .progress-bar {
+  width: {{ percentage_attendance }}%;
+  background-color: #f27011;
+}
+
+#fifty:checked ~ .progress > .progress-bar {
+  width: {{absent_attendance}}%;
+  background-color: #f2b01e;
+}
+
+#seventyfive:checked ~ .progress > .progress-bar {
+  width: {{max_attendance}}%;
+  background-color: #f2b01e;
+}
+
+
+.radio {
+  display: none;
+}
+
+.label {
+  display: inline-block;
+  margin: 0 5px 20px;
+  padding: 3px 8px;
+  color: #aaa;
+  text-shadow: 0 1px black;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.radio:checked + .label {
+  color: white;
+  background: rgba(0, 0, 0, 0.25);
+}</style> 
+                                
+                                </head>
+    
+    <body>
+        
+         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand" href="/home/#myCarousel"><strong>COURSE MANAGEMENT SYSTEM</strong></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/courses/">Courses</a><!--Done-->
+                    </li>
+                    <li><a href="/attendance/">Attendance</a><!--Doing-->
+                    </li>
+                    <li><a href="/polls/">Polls</a><!--Done-->
+                    </li>
+                    <li><a href="/discussion/">Discussion</a>
+                    </li>
+                    <li><a href="/calendar/">Calendar</a>
+                    </li>
+                    <li><a href="/help/">Help</a>
+                    </li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ username }}<b class="caret"></b></a>
+                            <ul class="dropdown-menu dropdown-tasks">
+                                <li class="active"><a href=""></a>
+                                </li>
+                                <li><a href="/changepassword/">Change Password</a>
+                                </li>
+                                <li><a href="/accounts/logout/">Logout</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+        
+        <div class="container">
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        <small></small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/home/">Home</a>
+                        </li>
+                        <li class="active"><a href="/attendance/">Attendance</a></li>
+                        </li>
+                        <li class="active">{{ subject_selected_name }}</li>
+                    </ol>
+                </div>
+                
+            </div>
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">{{subject_selected_name}} 
+                        
+                        
+                        </div>
+                
+                
+                <div class="row">
+                    <div class="col-lg-8">
+                        
+                        
+                        
+                        <!--CODE HERE-->
+                        
+                        
+                        
+                        <!--CODE FROM HERE TO PRINT DETAILS OF DIFFERENT THINGS-->
+                         <div class="row">
+                         <div class="col-lg-3">
+                         <div class="panel panel-info">
+                         <div class="panel-heading">
+                         <div class="row">
+                         <div class="col-xs-6">
+                         <i class="fa fa-comments fa-5x"></i>
+                         </div>
+                         <div class="col-xs-6 text-right">
+                         <p class="announcement-heading">{{ total_classes }}</p>
+                         <p class="announcement-text">Total Number of Classes</p>
+                         </div>
+                         </div>
+                         </div>
+                         <a href="#">
+                         <div class="panel-footer announcement-bottom">
+                         <div class="row">
+                         <div class="col-xs-6">
+                         <!--View Details-->
+                         </div>
+                         <div class="col-xs-6 text-right">
+                         <i class="fa fa-arrow-circle-right"></i>
+                         </div>
+                         </div>
+                         </div>
+                         </a>
+                         </div>
+                         </div>
+                         <div class="col-lg-3">
+                         <div class="panel panel-warning">
+                         <div class="panel-heading">
+                         <div class="row">
+                         <div class="col-xs-6">
+                         <i class="fa fa-check fa-5x"></i>
+                         </div>
+                         <div class="col-xs-6 text-right">
+                         <p class="announcement-heading">{{ present_classes }}</p>
+                         <p class="announcement-text">Number of Classes attended</p>
+                         </div>
+                         </div>
+                         </div>
+                         <a href="#">
+                         <div class="panel-footer announcement-bottom">
+                         <div class="row">
+                         <div class="col-xs-6">
+                         <!--View Details-->
+                         </div>
+                         <div class="col-xs-6 text-right">
+                         <i class="fa fa-arrow-circle-right"></i>
+                         </div>
+                         </div>
+                         </div>
+                         </a>
+                         </div>
+                         </div>
+                         <div class="col-lg-3">
+                         <div class="panel panel-danger">
+                         <div class="panel-heading">
+                         <div class="row">
+                         <div class="col-xs-6">
+                         <i class="fa fa-tasks fa-5x"></i>
+                         </div>
+                         <div class="col-xs-6 text-right">
+                         <p class="announcement-heading">{{ absent_classes }}</p>
+                         <p class="announcement-text">Number of Classes missed</p>
+                         </div>
+                         </div>
+                         </div>
+                         <a href="#">
+                         <div class="panel-footer announcement-bottom">
+                         <div class="row">
+                         <div class="col-xs-6">
+                         <!--View Details-->
+                         </div>
+                         <div class="col-xs-6 text-right">
+                         <i class="fa fa-arrow-circle-right"></i>
+                         </div>
+                         </div>
+                         </div>
+                         </a>
+                         </div>
+                         </div>
+                         <div class="col-lg-3">
+                         <div class="panel panel-success">
+                         <div class="panel-heading">
+                         <div class="row">
+                         <div class="col-xs-6">
+                         <i class="fa fa-comments fa-5x"></i>
+                         </div>
+                         <div class="col-xs-6 text-right">
+                         <p class="announcement-heading">{{ percentage_attendance }}</p>
+                         <p class="announcement-text">Percentage Attendance</p>
+                         </div>
+                         </div>
+                         </div>
+                         <a href="#">
+                         <div class="panel-footer announcement-bottom">
+                         <div class="row">
+                         <div class="col-xs-6">
+                         <!--View Details-->
+                         </div>
+                         <div class="col-xs-6 text-right">
+                         <i class="fa fa-arrow-circle-right"></i>
+                         </div>
+                         </div>
+                         </div>
+                         </a>
+                         </div>
+                         </div>
+                         <div class="col-xs-6 text-right">
+                         <i class="fa fa-arrow-circle-right"></i>
+                         </div>
+                         </div>
+                         </div>
+                         </a>
+                         </div>
+                         </div>
+                         <div class="col-lg-3">
+                         <div class="panel panel-success">
+                         <div class="panel-heading">
+                         <div class="row">
+                         <div class="col-xs-6">
+                         <i class="fa fa-comments fa-5x"></i>
+                         </div>
+                         <div class="col-xs-6 text-right">
+                         <p class="announcement-heading">{{ max_attendance }}</p>
+                         <p class="announcement-text">Maximum possible Attendance</p>
+                         </div>
+                         </div>
+                         </div>
+                         <a href="#">
+                         <div class="panel-footer announcement-bottom">
+                         <div class="row">
+                         <div class="col-xs-6">
+                         <!--View Details-->
+                         </div>
+                         <div class="col-xs-6 text-right">
+                         <i class="fa fa-arrow-circle-right"></i>
+                         </div>
+                         </div>
+                         </div>
+                         </a>
+                         </div>
+                         </div>
+                         </div><!-- /.row-->
+                         
+                         
+                         </div><!-- /#page-wrapper-->
+                         
+                         </div><!-- /#wrapper -->
+
+
+
+                         <center>
+                    <br></br>
+                    <div class="container">
+  <input type="radio" class="radio" name="progress" value="five" id="five">
+  <label for="five" class="label">Total Classes</label>
+
+  <input type="radio" class="radio" name="progress" value="twentyfive" id="twentyfive" checked>
+  <label for="twentyfive" class="label">Present Percentage</label>
+
+  <input type="radio" class="radio" name="progress" value="fifty" id="fifty">
+  <label for="fifty" class="label">Absent Percentage</label>
+
+ <input type="radio" class="radio" name="progress" value="seventyfive" id="seventyfive">
+  <label for="seventyfive" class="label">Maximum Possible Attendance</label>
+
+
+  <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+</div></center>
+                        
+
+<div>
+    </div>
+<div>
+    <hr>
+    </hr>
+</div>
+
+           
+        <!-- JavaScript -->
+        <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+        
+        <!-- Page Specific Plugins -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+        <script src="js/morris/chart-data-morris.js"></script>
+        <script src="js/tablesorter/jquery.tablesorter.js"></script>
+        <script src="js/tablesorter/tables.js"></script>
+        <!--[if lte IE 8]><script src="js/excanvas.min.js"></script><![endif]-->
+        <script src="js/flot/jquery.flot.js"></script>
+        <script src="js/flot/jquery.flot.tooltip.min.js"></script>
+        <script src="js/flot/jquery.flot.resize.js"></script>
+        <script src="js/flot/jquery.flot.pie.js"></script>
+        <script src="js/flot/chart-data-flot.js"></script>
+
+
+
+
+
+
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        </p>
+                        
+                        <!--Run The above code in a loop in order to print all the polls and their results and also if you wish i have left the newer and older part to code :)
+                         but you can remove them if displaying in one page-->
+                        
+                        <!-- pager -->
+                        
+                        
+                    </div>
+                    <!-- /container -->
+                    
+                    <footer>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <ul class="list-inline">
+                                        <center>
+                                        </center>
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- JavaScript -->
+        <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+                    </body>
+    
+</html>

@@ -1,0 +1,87 @@
+{% extends 'base.html' %} 
+{% load i18n %}
+{% load bootstrap_calendar %}
+
+{% block content %}
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand" href="/home/#myCarousel"><strong>COURSE MANAGEMENT SYSTEM</strong></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/courses/">Courses</a><!--Done-->
+                    </li>
+                    <li><a href="/attendance/">Attendance</a><!--Doing-->
+                    </li>
+                    <li><a href="/polls/">Polls</a><!--Done-->
+                    </li>
+                    <li><a href="/discussion/">Discussion</a>
+                    </li>
+                    <li><a href="/calendar/">Calendar</a>
+                    </li>
+                    <li><a href="/help/">Help</a>
+                    </li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }}<b class="caret"></b></a>
+                            <ul class="dropdown-menu dropdown-tasks">
+                                <li class="active"><a href="coursescse.html"></a>
+                                </li>
+                                <li><a href="/feedback/">Feedback</a>
+                                </li>
+                                <li><a href="/changepassword/">Change Password</a>
+                                </li>
+                                <li><a href="/accounts/logout/">Logout</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+	
+	<h1><br></br></h1>
+	
+<div class="row-fluid">
+    <div class="span12">
+        {% bootstrap_controls 'from-inline pull-right' %}
+    </div>
+</div>
+<div class="clear-fix">
+</div>
+<div class="row">
+    <div class="span7">
+        {% bootstrap_calendar '' %}
+
+    </div>
+	
+	{% for group in user.groups.all %}
+						{% if group.name == 'Teachers' %}
+	<div class="span3">
+	<br><br>
+	<center><a href="/add_event/" class="btn btn-default btn-success btn-lg"><span class="glyphicon glyphicon-plus-sign"></span> Add Events</a>
+	<a href="/edit_event/" class="btn btn-default btn-info btn-lg"><span class="glyphicon glyphicon-ok"></span> Edit Events</a>
+	<a href="/remove_event/" class="btn btn-default btn-danger btn-lg"><span class="glyphicon glyphicon-remove-sign"></span> Remove Events</a>
+   <br></br></center>
+	</div>
+		{% endif %}
+	{% endfor %}
+</div>
+</body>
+{% endblock %}

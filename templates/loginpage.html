@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+
+    <!-- Custom Google Web Font -->
+    <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Add custom CSS here -->
+    <link href="{% static "css/landing-page.css" %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        
+		
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">COURSE MANAGEMENT SYSTEM</a>
+        </div>
+       <!--<div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="form">
+            <div class="form-group">
+              <input type="text" placeholder="Username" class="form-control">
+            </div>
+           <!-- <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign Me In</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+		
+    </nav>
+
+    <div class="intro-header">
+
+    <div class="container">
+
+    <div class="row">
+    <div class="col-lg-12">
+    <div class="intro-message">
+	
+                        <h1><ul><a href="/accounts/login/">Log In</ul></h1>
+                        <hr class="intro-divider">
+                        <ul class="list-inline intro-social-buttons">
+                            <li><a href="/forgotpassword/" class="btn btn-default btn-lg"><i class="fa fa-user fa-fw"></i> <span class="network-name">Forgot Password</span></a>
+                            </li>
+                            <!--
+                            <li><a href="/documentation/" class="btn btn-default btn-lg"><i class="fa fa-film fa-fw"></i> <span class="network-name">Documentation</span></a>
+                            </li>-->
+                            
+                            <li><a href="{% static "assets/uploaded_files/Documentation.docx" %}" class="btn btn-default btn-lg"><i class="fa fa-pencil fa-fw"></i> <span class="network-name">Documentation</span></a>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header-->
+
+    
+    <!-- JavaScript -->
+    <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+
+</body>
+
+</html>

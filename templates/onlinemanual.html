@@ -1,0 +1,296 @@
+<!Doctype html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Online Manual</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon-precomposed" href="http://designmodo.com/wp-content/themes/designmodov2.1/images/mobile.png"/>
+        <link rel="shortcut icon" href="http://designmodo.com/favicon.ico" />
+<link rel="stylesheet" href="{% static "css/main.css" %}">
+        <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+        
+<!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="{% static "css/modern-business.css" %}" rel="stylesheet">
+    <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+        <link rel="stylesheet" href="{% static "css/demo_styles.css" %}">
+        <link rel="stylesheet" href="{% static "css/demo1.css" %}">
+        
+        <script src="{% static "js/vendor/modernizr-2.6.2.min.js" %}"></script>
+    </head>
+    <body class="dm-demo1">
+
+        <!-- Demo Navigation -->
+        <nav class="nav clearfix">
+            <!--<button class="nav-el" id="el-topleft" data-id="ov-topleft"><span class="icon-heart" ></span></button>
+			<button class="nav-el" id="el-topright" data-id="ov-topright"><span class="icon-cloud"></span></button>
+            <button class="nav-el" id="el-btmleft" data-id="ov-btmleft"><span class="icon-location"></span></button>-->
+            <button class="nav-el" id="el-btmright" data-id="ov-1"><span class="icon-search"></span></button>
+			
+            <!--<button class="nav-el" id="el-btmleft" data-id="ov-btmleft"><span class="icon-data"></span></button>
+            <!--<button class="nav-el" id="el-topright" data-id="ov-topright"><span class="icon-params"></span></button>
+            <button class="nav-el" id="el-btmleft" data-id="ov-btmleft"><span class="icon-stack"></span></button>
+            <button class="nav-el" id="el-btmright" data-id="ov-btmright"><span class="icon-fire"></span></button>-->
+			
+			
+            <button class="nav-el" id="el-topleft" data-id="ov-2"><span class="icon-tag"></span></button>
+            <button class="nav-el" id="el-topright" data-id="ov-3"><span class="icon-key"></span></button>
+            <button class="nav-el" id="el-topleft" data-id="ov-4"><span class="icon-lock"></span></button>
+			
+            <!--<button class="nav-el" id="el-btmright" data-id="ov-btmright"><span class="icon-phone"></span></button>
+			
+			
+                <button class="nav-el" id="el-topleft" data-id="ov-topleft"><span class="icon-cup"></span></button>-->
+                <!--<button class="nav-el" id="el-topright" data-id="ov-5"><span class="icon-key"></span></button>
+                <button class="nav-el" id="el-btmleft" data-id="ov-6"><span class="icon-tag"></span></button>
+                <!--<button class="nav-el" id="el-btmright" data-id="ov-btmright"><span class="icon-sound"></span></button>-->
+        </nav>
+
+        <!-- Overlay (hidden by default)-->
+        <section class="overlay" id="ov-1">
+            
+			<div class="wrap">
+               
+
+                <h2>Discussion Forum</h2>
+		<br>
+		When a user clicks on the discussion link from navigation-bar or home-page s/he will be redirected to discussion page
+		<br>
+		It will show the present going-on discussions and each discussion will have upvote,time created,created-by,view comments,no of comments functionality, and displays four additional features:<br>
+		<h4><h2>1:Search<h2>
+			<p> In this feature, user can search the discussion topics by title name or it can search the topics created by a particular person</p><br>
+			<img src="{% static "img/searchdiscussion.png" %}"><br>
+		<h2>2:My Discussion<h2>
+		<p>In this user can view the topics created by him and can delete them too.
+</p><br>
+			<img src="{% static "img/Mydiscussion.png" %}"><br>
+		<h2>3:Popular Discussion<h2>
+<p>In this feature , user can see the popular discussions based upon no of upvotes and comments.
+</p>	<br>
+			<img src="{% static "img/populardiscussion.png" %}"><br>
+		
+	<br>
+	<h2>4:Adding Comments to a particular topic<h2>
+<p>To add comments to a particular topic user has  to open the particular topic and click "comment" to add a comment.
+</p>	<br>
+			<img src="{% static "img/addcomment.png" %}"><br>
+		
+	<br><br><br>
+		
+
+		<h2>Polls</h2>
+		<br>
+		When a user clicks on the Polls link from navigation-bar or home-page s/he will be redirected to polls page
+		<br>
+		It will show the present going-on polls and each poll will have time created,created-by,choices "Yes  or No or Can't Say" functionality, and displays three additional features:<br>
+		<h4><h2>1:Search<h2>
+			<p> In this feature, user can search the polls by  name or it can search the polls created by a particular person</p><br>
+			<img src="{% static "img/searchpoll.png" %}"><br>
+		<h2>2:My Polls<h2>
+		<p>In this user can view the polls created by him and can delete them too.
+</p><br>
+			<img src="{% static "img/mypolls.png" %}"><br>
+		<h2>3:Popular Polls<h2>
+<p>In this feature , user can see the popular polls based upon no of responses .
+</p>	<br>
+			<img src="{% static "img/popularpolls.png" %}"><br>
+		
+	<br>
+	<br>
+
+
+
+
+</div>
+            </div>
+
+            <button class="close"><span class="mfg-cancel"></span></button>
+        </section>
+
+        <section class="overlay" id="ov-2">
+            <div class="wrap">
+                
+      
+	<h1>ATTENDANCE</h1>
+	<h2>For Teacher</h2>
+	<h3>MAIN PAGE:</h3>
+	<br>
+               <img src="{% static "img/ipad.png" %}"><br>
+	<p>When a teacher clicks on the attendance tab, he/she is redirected to this page. This page shows all the courses which the teacher is teaching.
+	Each course shows 3 options:</p>
+	<h4>1: View attendance</h4> On clicking this button the teacher can view the dates on which attendance for that course was taken.
+	<br>
+			<img src="{% static "img/ipad.png" %}"><br>
+	<h4>2: Take Today's Attendance</h4> On clicking this button the teacher can take attendance for any particular date or todays date.
+	<br>
+			<img src="{% static "img/ipad.png" %}"><br>
+	<h4>3: View attendance report</h4> On clicking this button the teacher can view the list of percentage wise attendances of all the students enrolled 		in that course  
+	<br>
+			<img src="{% static "img/ipad.png" %}"><br><br>
+<p>
+
+
+<h3>VIEW ATTENDANCE PAGE</h3>
+­­On the view attendance page, the teacher can view different dates on which attendance was taken sorted date wise.
+On clicking any date, the details for that day’s attendance will be shown.
+<h3>EDIT ATTENDANCE PAGE</h3>
+On this page the teacher can view attendance for students for that date. The teacher has the option to edit that attendance also by making suitable changes and clicking on the edit attendance button.
+Also the summarised data for that date like total students, present students and absent students are displayed.
+<h3>TAKE ATTENDANCE</h3>
+On this page the teacher enters the date for which he wants to enter the attendance. He then takes the corresponding attendance and clicks on the save attendance button to save the attendance.
+<h3>ATTENDANCE LIST  PAGE</h3>
+On this page the teacher can view percentage wise attendance for students of that course.
+
+
+<div class = "wrap">
+<h2>For Students</h2>
+<br>
+               <img src="{% static "img/ipad.png" %}"><br>
+When a student clicks on the attendance tab, he/she is redirected to this page. This page shows the courses in which the student is currently enrolled.
+Each course has view attendance report button by clicking on which the students can view their summary of attendance in that course 
+<br><br>
+<h3>SUBJECT SELECTED PAGE</h3>
+On this page the student gets various tools to analyse his attendance :
+<h4>1: Total No of Classes</h4> – this is the total number of classes on which attendance has been taken until now.<br>
+<h4>2: Present Classes</h4> – the total days on which he was present.<br>
+<h4>3: Absent Classes</h4> – the total days on which he was absent.<br>
+<h4>4: Percentage Attendance</h4> – attendance percentage calculated on the basis of total, present classes.<br>
+<h4>5: Projected No of Classes</h4> – no of classes the student is likely going to attend by attending classes at current rate.<br>
+<h4>6: Maximum Possible Attendance </h4> – the maximum attendance rate that the student can gain by attending all the classes from now on.<br>
+</p><br><br>
+               <img src="{% static "img/ipad.png" %}">
+	
+	
+            </div>
+            </div>
+
+            <button class="close"><span class="mfg-cancel"></span></button>
+        </section>
+
+        <section class="overlay" id="ov-3">
+            <div class="wrap">
+                   <h2>Essential Features</h2>
+		<br>
+		Course Management System has important key features such as courses, course Material, help.
+		<br>
+
+		<h4><h2>1:Courses Selection<h2>
+			<p> Using it, a student selects his/her courses from a list of available courses. This feature is available at the first login</p><br>
+			<br><img src="{% static "img/courses.png" width="500px" %}"></br>
+		<h2>2:Courses<h2>
+		<p>It displays lists of selected courses alongwith the course teachers and facilities to view and update(only for teachers) course material.</p><br>
+			<img src="{% static "img/coursematerial.png" %}"><br>
+	        <h2>3:CourseMaterial<h2>
+		<p>Teacher can upload study material and can provide a suitable link for the material.</p><br>
+			
+		<h2>4:Help<h2>
+	        <p>Users can contact with us anytime :)</p><br>
+			<img src="{% static "img/helpman.jpg" %}"><br>
+	<br><br>
+
+            </div>
+
+            <button class="close"><span class="mfg-cancel"></span></button>
+        </section>
+
+        <section class="overlay" id="ov-4">
+            <div class="wrap">
+                   <h2>Security Features</h2>
+		<br>
+		Course Management System is well-equipped  with two kind of security functionalities, forgot password and change password.
+		<br>
+
+		<h4><h2>1:ForgotPassword<h2>
+			<p> If user forgets his password, it can change his password by clicking on the "forgot password " link and submitting his  verified email</p><br>
+			<img src="{% static "img/forgotpassword.png" %}"><br>
+		<br>
+			<img src="{% static "img/forgotpassword2.png" %}"><br>
+		<h2>2:ChangePassword<h2>
+		<p>If user feels vulnerable of his/her password, can go to "change password " link and change password as and when required.
+</p><br>
+			<img src="{% static "img/changepwd.png" %}"><br>
+		<br>
+			<img src="{% static "img/changepwd2.png" %}"><br>
+	<br><br>
+
+            </div>
+
+            <button class="close"><span class="mfg-cancel"></span></button>
+        </section>
+		
+	<!--	<section class="overlay" id="ov-5">
+            <div class="wrap">
+                <h1>Welcome to Search section5</h1>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <button class="close"><span class="mfg-cancel"></span></button>
+        </section>
+		
+		<section class="overlay" id="ov-6">
+            <div class="wrap">
+                <h1>Welcome to Search section6</h1>
+<br><br>
+		<h1>ATTENDANCE( FOR TEACHER)</h1>
+
+	<h3>MAIN PAGE:
+	When a teacher clicks on the attendance tab, he/she is redirected to this page. This page shows all the courses which the teacher is teaching.
+	Each course shows 3 options:
+	1. View attendance – On clicking this button the teacher can view the dates on which attendance for that course was taken.
+	2. Take Today’s Attendance – On clicking this button the teacher can take attendance for any particular date or todays date.
+	3. View attendance report – on clicking this button the teacher can view the list of percentage wise attendances of all the students enrolled 		in that course  </h3>
+<p>
+VIEW ATTENDANCE PAGE
+­­On the view attendance page, the teacher can view different dates on which attendance was taken sorted date wise.
+On clicking any date, the details for that day’s attendance will be shown.
+EDIT ATTENDANCE PAGE
+On this page the teacher can view attendance for students for that date. The teacher has the option to edit that attendance also by making suitable changes and clicking on the edit attendance button.
+Also the summarised data for that date like total students, present students and absent students are displayed.
+TAKE ATTENDANCE
+On this page the teacher enters the date for which he wants to enter the attendance. He then takes the corresponding attendance and clicks on the save attendance button to save the attendance.
+ATTENDANCE LIST  PAGE
+On this page the teacher can view percentage wise attendance for students of that course.
+
+ATTENDANCE (FOR STUDENT)
+When a student clicks on the attendance tab, he/she is redirected to this page. This page shows the courses in which the student is currently enrolled.
+Each course has view attendance report button by clicking on which the students can view their summary of attendance in that course 
+SUBJECT SELECTED PAGE
+On this page the student gets various tools to analyse his attendance :
+1. Total number of classes – this is the total number of classes on which attendance has been taken until now.
+2. Present classes – the total days on which he was present
+3. Absent classes – the total days on which he was absent
+4. Percentage attendance – attendance percentage calculated on the basis of total, present classes
+5. Projected number of classes – no of classes the student is likely going to attend by attending classes at current rate
+6. Maximum possible attendance – the maximum attendance rate that the student can gain by attending all the classes from now on.
+</p><br><br>
+               <img src="{% static "img/ipad.png" %}">
+	
+	
+            </div>
+
+            <button class="close"><span class="mfg-cancel"></span></button>
+        </section>-->
+
+        <a href="/home/" class="backtoarticle"><b><h2>Home Page</h2></b></a>
+<!--
+        <div class="browser_msg">
+            <p>Browser not supported<br><a href="http://designmodo.com/css3-animations/" class="backtoarticle">Back to the article</a></p>
+        </div-->
+        
+        <script src="{% static "js/jquery.min.js" %}"></script>
+        <script>window.jQuery || document.write('<script src="{% static "js/vendor/jquery-1.10.2.min.js" %}"><\/script>')</script>
+        <script src="{% static "js/plugins.js" %}"></script>
+        <script src="{% static "js/demo.js" %}"></script>
+		<script src="{% static "js/jquery-1.10.2.js" %}"></script>
+	<script src="{% static "js/bootstrap.js" %}"></script>
+	<script src="{% static "js/modern-business.js" %}"></script>
+
+    </body>
+</html>

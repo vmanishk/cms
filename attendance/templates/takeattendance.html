@@ -1,0 +1,343 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="description" content="">
+                    <meta name="author" content="">
+                        
+                        <title>Edit Attendance</title>
+                        
+                        <!-- Bootstrap core CSS -->
+                        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+                            
+                            <!-- Add custom CSS here -->
+                            <link href="{% static "css/blog-home.css" %}" rel="stylesheet">
+                               <style type="text/css">.container {
+}
+
+.container .progress {
+  margin: 0 auto;
+  width: 400px;
+}
+
+.progress {
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+  height: 16px;
+  border-radius: 4px;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  -webkit-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -o-transition: 0.4s linear;
+  transition: 0.4s linear;
+  -webkit-transition-property: width, background-color;
+  -moz-transition-property: width, background-color;
+  -o-transition-property: width, background-color;
+  transition-property: width, background-color;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/*
+ * Note: using adjacent or general sibling selectors combined with
+ *       pseudo classes doesn't work in Safari 5.0 and Chrome 12.
+ *       See this article for more info and a potential fix:
+ *       http://css-tricks.com/webkit-sibling-bug/
+ */
+
+#five:checked ~ .progress > .progress-bar {
+  width: 100%;
+  background-color: #f63a0f;
+}
+
+#twentyfive:checked ~ .progress > .progress-bar {
+  width: {{ present_per }}%;
+  background-color: #f27011;
+}
+
+#fifty:checked ~ .progress > .progress-bar {
+  width: {{ absent_per }}%;
+  background-color: #f2b01e;
+}
+
+
+.radio {
+  display: none;
+}
+
+.label {
+  display: inline-block;
+  margin: 0 5px 20px;
+  padding: 3px 8px;
+  color: #aaa;
+  text-shadow: 0 1px black;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.radio:checked + .label {
+  color: white;
+  background: rgba(0, 0, 0, 0.25);
+}</style> 
+                                </head>
+    
+    <body>
+        
+         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand" href="/home/#myCarousel"><strong>COURSE MANAGEMENT SYSTEM</strong></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/courses/">Courses</a><!--Done-->
+                    </li>
+                    <li><a href="/attendance/">Attendance</a><!--Doing-->
+                    </li>
+                    <li><a href="/polls/">Polls</a><!--Done-->
+                    </li>
+                    <li><a href="/discussion/">Discussion</a>
+                    </li>
+                    <li><a href="/calendar/">Calendar</a>
+                    </li>
+                    <li><a href="/help/">Help</a>
+                    </li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ my_username }}<b class="caret"></b></a>
+                            <ul class="dropdown-menu dropdown-tasks">
+                                <li class="active"><a href=""></a>
+                                </li>
+                                <li><a href="/changepassword/">Change Password</a>
+                                </li>
+                                <li><a href="/accounts/logout/">Logout</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+        
+        <div class="container">
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        <small></small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/home/">Home</a>
+                        </li>
+                        <li><a href="/attendance/">Attendance</a>
+                        </li>
+                        <li class="active">Edit  Attendance</li>
+                    </ol>
+                </div>
+                
+            </div>
+
+<!--
+
+
+                                        <form role="form" action="/attendance/attendanceteacher/" method="POST">
+                                        {% csrf_token %}
+                                        <input type="text" value = {{ selected_course.Course_Name }} name="coursepassed" hidden="hidden" />
+                                         </form>   
+
+                                    -->
+
+
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    
+                        
+                        
+                        <div class="row">
+                            <div class="col-lg-6">
+
+                                <form role="form" action="/attendance/attendanceteacher/" method="POST">
+                                        {% csrf_token %}
+                                        <input type="text" value = {{ selected_course.Course_Name }} name="coursepassed" hidden="hidden" />
+                                         </form>
+                                
+                                <form role="form" method="post" action="/attendance/attendanceteacher/">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="idd" value="{{attend_main.id}}"
+                                    
+                                    
+                                    
+                                    
+                                    
+                            </div>
+                        
+                        
+                        
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <hr>
+                                <h2></h2>
+                                <div class="table-responsive">
+                                    
+
+                                    <table class="table table-bordered table-hover tablesorter">
+                                        <thead>
+                                            <tr>
+                                                
+                                                <th>Roll no <i class="fa fa-sort"></i></th>
+                                                <th>Name <i class="fa fa-sort"></i></th>
+                                                <th>Present<i class="fa fa-sort"></i></th>
+                                                <th>Absent <i class="fa fa-sort"></i></th>
+                                                
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                           
+                                           
+                                           <!--CODE HERE TO PRINT THE PAGE FOR THE STUDENT-->
+                                           {% for item in date_objects %}
+                                           
+                                           
+                                           <tr>
+
+                                                   <td>{{ item.Attendance_Students.profile.uid}}</td>
+                                                   <td>{{ item }}</td>
+
+                                                    {% if item.Status %}
+                                                    <td>
+                                                    <input type="radio" name="status{{forloop.counter}}"  value="1" checked>
+                                                    </td>
+                                                    <td>
+                                                    <input type="radio" name="status{{forloop.counter}}" value="0">
+                                                    </td>
+                                                    {% endif %}
+                                                     
+
+                                                    
+                                                    {% if not item.Status %}
+                                                       <td>
+                                                       <input type="radio" name="status{{forloop.counter}}"  value="1" ></td>
+                                                       <td>
+                                                       <input type="radio" name="status{{forloop.counter}}"  value="0" checked>
+                                                       </td>
+                                                     {% endif %}
+                                                    
+
+
+
+
+                                            </tr>
+                                            {% endfor %}
+
+
+
+
+                                            
+
+
+                                            
+
+
+
+                                            
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        
+            </div>
+                        <!--CODE HERE TO SUBMIT THE INFO TO DATABASE-->
+                        <button type="submit" name="attend_update" value="attend_update" class="btn btn-default">Save Attendance</button>
+                    </form>
+<center>
+                    <br></br>
+                    <div class="container">
+  <input type="radio" class="radio" name="progress" value="five" id="five">
+  <label for="five" class="label">Total Strength</label>
+
+  <input type="radio" class="radio" name="progress" value="twentyfive" id="twentyfive" checked>
+  <label for="twentyfive" class="label">Present Percentage</label>
+
+  <input type="radio" class="radio" name="progress" value="fifty" id="fifty">
+  <label for="fifty" class="label">Absent Percentage</label>
+
+
+  <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+</div></center>
+
+                    <h5>Total Students = {{ total_students }} </h5>
+                    <hr>
+                        <h5>Number of Students Present = {{ present_students }}                 <p>Percentage = {{ present_per }} %</p></h2><hr>
+                    <h5>Number of Students Absent = {{ absent_students }}               <p>Percentage = {{ absent_per }} %</p></h5><hr>
+    
+            <div class="row">
+                <div class="col-lg-8">
+                    
+                
+              
+            <hr>
+            
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p></p>
+                    </div>
+                </div>
+            </footer>
+            
+        </div>
+        
+        
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="list-inline">
+                            <center>
+                            </center>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- JavaScript -->
+        <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+        
+    </body>
+    
+</html>

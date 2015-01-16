@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)http://tympanus.net/Tutorials/ShapeHoverEffectSVG/index3.html -->
+<html lang="en" class="demo-3 no-js"><object type="{0C55C096-0F1D-4F28-AAA2-85EF591126E7}" cotype="cs" id="cosymantecbfw" style="width: 100%; height: 0px; display: block; position: absolute; z-index:99999;"></object><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Shape Hover Effect with SVG | Demo 3</title>
+		<meta name="description" content="Hover Effects with animated SVG Shapes using Snap.svg">
+		<meta name="keywords" content="animated svg, hover effect, grid, svg shape html, ">
+		<meta name="author" content="Codrops">
+		<link rel="shortcut icon" href="http://tympanus.net/Tutorials/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="./Shape Hover Effect with SVG   Demo 3_files/normalize.css">
+		<link rel="stylesheet" type="text/css" href="./Shape Hover Effect with SVG   Demo 3_files/demo.css">
+		<link rel="stylesheet" type="text/css" href="./Shape Hover Effect with SVG   Demo 3_files/component.css">
+		<script type="text/javascript" async="" src="./Shape Hover Effect with SVG   Demo 3_files/ga.js"></script><script src="./Shape Hover Effect with SVG   Demo 3_files/snap.svg-min.js"></script><style type="text/css"></style>
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-7243260-2']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+
+	<script type="text/javascript" id="cosymantecbfw_resize">var kvcPushDownExceptions = {};									var retryCSSHack = 0;									var isUrlExcepted = function() {										if(!window.location || !kvcPushDownExceptions) {											return false;										}										var path = kvcPushDownExceptions[window.location.host];										if(!path) {											return false; 										}										var patt = new RegExp(path);										return patt.test(window.location.pathname);									};									document.addEventListener("initializeExceptionListEvent", function(e) {										if(!e || !e.detail) { 											return; 										} 										kvcPushDownExceptions = e.detail;									}, false);									var coAdjustToolbarHeight = function(h) { 									var e = document.getElementById("cosymantecbfw"); 									if(e) { 										var nOldHeight = 0;										if(window.getComputedStyle(e,null)) {											var height = window.getComputedStyle(e,null).getPropertyValue("height");											var oldHeight = height.replace("px", "");											nOldHeight = Number(oldHeight);											if(!isNaN(nOldHeight)) {												nOldHeight = 0;											}										}										if(document.readyState === "complete") {											applyCSSHack(nOldHeight, h);										} else {											window.addEventListener("onload", applyCSSHack(nOldHeight, h), false);										}										e.style.height = h + "px";										e.style.left = window.pageXOffset + "px";									}								};							var arrayElements = new Array();							var applyCSSHack = function( oldHeight, newHeight) {									if(isUrlExcepted()) {										return;									}									if(!document.body) {										if(retryCSSHack++ < 30) {											setTimeout(function() { applyCSSHack(oldHeight, newHeight); }, 100);										}										return;									}									arrayElements = new Array();									if(document.body.style) {										document.body.style.position = "relative";										var len = newHeight + "px";										document.body.style.setProperty("margin-top", len, "important");                                        document.body.style.setProperty("border", "1px solid transparent", "important");									}									walk(document.body);									for(var i = 0; i < arrayElements.length; i++) {										var elem = arrayElements[i];										if(null == window.getComputedStyle(elem,null)) {											continue;										}										var pos = window.getComputedStyle(elem,null).getPropertyValue("position");										if(pos !== "fixed") {											continue;										}										if(elem.parentNode == document.body) {											elem.style.position = "absolute";											continue;										}										var oldTop = window.getComputedStyle(elem,null).getPropertyValue("top");										oldTop = oldTop.replace("px", "");										var nOldTop = Number(oldTop);										if(!isNaN(nOldTop)) {											nOldTop = 0;										}										var top = nOldTop + (Number(newHeight) - Number(oldHeight));										if(elem.style) {											elem.style.top = top + "px";										}									}								};							var walk = function (elm) {								if(window.getComputedStyle(elm,null) && "auto" !== window.getComputedStyle(elm,null).getPropertyValue("top")) {									arrayElements.push(elm);								}								var node;								for (node = elm.firstChild; node; node = node.nextSibling) {									if (node.nodeType === 1) {										walk(node);									}								}							};</script><script type="text/javascript" id="waxCS">var WAX = function () { var _arrInputs; return { getElement: function (i) { return _arrInputs[i]; }, setElement: function(i){ _arrInputs=i; } } }(); function waxGetElement(i) { return WAX.getElement(i); } function coSetPageData(t, d){ if('wax'==t) { WAX.setElement(d);} }</script></head>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/SVGDrawingAnimation/"><span>Previous Demo</span></a>
+				<span class="right"><a href="http://cargocollective.com/isaac317">Artwork by Isaac Montemayor</a><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=18145"><span>Back to the Codrops Article</span></a></span>
+			</div>
+			<header class="codrops-header">
+				<h1>Shape Hover Effect with SVG<span>Recreating the effect as seen on <a href="http://christmasexperiments.com/">The Christmas Experiments</a></span></h1>
+				<nav class="codrops-demos">
+					<a href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/index.html">Demo 1</a>
+					<a href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/index2.html">Demo 2</a>
+					<a class="current-demo" href="./Shape Hover Effect with SVG   Demo 3_files/Shape Hover Effect with SVG   Demo 3.htm">Demo 3</a>
+				</nav>
+			</header>
+			<section id="grid" class="grid clearfix">
+				<a href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/index3.html#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
+					<figure>
+						<img src="./Shape Hover Effect with SVG   Demo 3_files/1.png">
+						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M0,0C0,0,0,182,0,182C0,182,90,126.5,90,126.5C90,126.5,180,182,180,182C180,182,180,0,180,0C180,0,0,0,0,0C0,0,0,0,0,0"></path><desc>Created with Snap</desc><defs></defs></svg>
+						<figcaption>
+							<h2>Crystalline</h2>
+							<p>Soko radicchio bunya nuts gram dulse.</p>
+							<button>View</button>
+						</figcaption>
+					</figure>
+				</a>
+				<a href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/index3.html#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
+					<figure>
+						<img src="./Shape Hover Effect with SVG   Demo 3_files/2.png">
+						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M0,0C0,0,0,182,0,182C0,182,90,126.5,90,126.5C90,126.5,180,182,180,182C180,182,180,0,180,0C180,0,0,0,0,0C0,0,0,0,0,0"></path><desc>Created with Snap</desc><defs></defs></svg>
+						<figcaption>
+							<h2>Cacophony</h2>
+							<p>Two greens tigernut soybean radish.</p>
+							<button>View</button>
+						</figcaption>
+					</figure>
+				</a>
+				<a href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/index3.html#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
+					<figure>
+						<img src="./Shape Hover Effect with SVG   Demo 3_files/3.png">
+						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M0,0C0,0,0,182,0,182C0,182,90,126.5,90,126.5C90,126.5,180,182,180,182C180,182,180,0,180,0C180,0,0,0,0,0C0,0,0,0,0,0"></path><desc>Created with Snap</desc><defs></defs></svg>
+						<figcaption>
+							<h2>Languid</h2>
+							<p>Beetroot water spinach okra water.</p>
+							<button>View</button>
+						</figcaption>
+					</figure>
+				</a>
+				<a href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/index3.html#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
+					<figure>
+						<img src="./Shape Hover Effect with SVG   Demo 3_files/4.png">
+						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M0,0C0,0,0,182,0,182C0,182,90,126.5,90,126.5C90,126.5,180,182,180,182C180,182,180,0,180,0C180,0,0,0,0,0C0,0,0,0,0,0"></path><desc>Created with Snap</desc><defs></defs></svg>
+						<figcaption>
+							<h2>Serene</h2>
+							<p>Water spinach arugula pea tatsoi.</p>
+							<button>View</button>
+						</figcaption>
+					</figure>
+				</a>
+				<a href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/index3.html#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
+					<figure>
+						<img src="./Shape Hover Effect with SVG   Demo 3_files/5.png">
+						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "></path><desc>Created with Snap</desc><defs></defs></svg>
+						<figcaption>
+							<h2>Nebulous</h2>
+							<p>Pea horseradish azuki bean lettuce.</p>
+							<button>View</button>
+						</figcaption>
+					</figure>
+				</a>
+				<a href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/index3.html#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
+					<figure>
+						<img src="./Shape Hover Effect with SVG   Demo 3_files/6.png">
+						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "></path><desc>Created with Snap</desc><defs></defs></svg>
+						<figcaption>
+							<h2>Iridescent</h2>
+							<p>A grape silver beet watercress potato.</p>
+							<button>View</button>
+						</figcaption>
+					</figure>
+				</a>
+				<a href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/index3.html#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
+					<figure>
+						<img src="./Shape Hover Effect with SVG   Demo 3_files/7.png">
+						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "></path><desc>Created with Snap</desc><defs></defs></svg>
+						<figcaption>
+							<h2>Resonant</h2>
+							<p>Chickweed okra pea winter purslane.</p>
+							<button>View</button>
+						</figcaption>
+					</figure>
+				</a>
+				<a href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/index3.html#" data-path-hover="M 0,0 0,38 90,58 180.5,38 180,0 z">
+					<figure>
+						<img src="./Shape Hover Effect with SVG   Demo 3_files/8.png">
+						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z "></path><desc>Created with Snap</desc><defs></defs></svg>
+						<figcaption>
+							<h2>Zenith</h2>
+							<p>Salsify taro catsear garlic gram.</p>
+							<button>View</button>
+						</figcaption>
+					</figure>
+				</a>
+			</section>
+			<section class="related">
+				<p>If you enjoyed these effects you might also like:</p>
+				<div><a href="http://tympanus.net/Tutorials/CaptionHoverEffects/"><h4>Caption Hover Effects</h4></a></div>
+				<div><a href="http://tympanus.net/Development/AnimatedSVGIcons/"><h4>Animated SVG Icons</h4></a></div>
+			</section>
+		</div><!-- /container -->
+		<script>
+			(function() {
+	
+				function init() {
+					var speed = 300,
+						easing = mina.backout;
+
+					[].slice.call ( document.querySelectorAll( '#grid > a' ) ).forEach( function( el ) {
+						var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
+							pathConfig = {
+								from : path.attr( 'd' ),
+								to : el.getAttribute( 'data-path-hover' )
+							};
+
+						el.addEventListener( 'mouseenter', function() {
+							path.animate( { 'path' : pathConfig.to }, speed, easing );
+						} );
+
+						el.addEventListener( 'mouseleave', function() {
+							path.animate( { 'path' : pathConfig.from }, speed, easing );
+						} );
+					} );
+				}
+
+				init();
+
+			})();
+		</script>
+		<!-- For the demo ad only -->   
+<script src="http://tympanus.net/codrops/adpacks/demoad.js"></script>
+	
+</body></html>

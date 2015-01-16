@@ -1,0 +1,11 @@
+{% if polls.count > 0 %}
+
+{% for poll in polls %}
+	<ul><a href="/app/view/{{ poll.id }}/">{{ poll.question }}</a></ul>
+{% endfor %}
+
+{% else %}
+
+<ul> Type to search!!</ul>
+
+{% endif %}

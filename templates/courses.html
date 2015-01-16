@@ -1,0 +1,228 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>COURSES</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS for the 'Round About' Template -->
+    <link href="{% static "css/round-about.css" %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand" href="/home/#myCarousel"><strong>COURSE MANAGEMENT SYSTEM</strong></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/courses/">Courses</a><!--Done-->
+                    </li>
+                    <li><a href="/attendance/">Attendance</a><!--Doing-->
+                    </li>
+                    <li><a href="/polls/">Polls</a><!--Done-->
+                    </li>
+                    <li><a href="/discussion/">Discussion</a>
+                    </li>
+                    <li><a href="/calendar/">Calendar</a>
+                    </li>
+                    <li><a href="/help/">Help</a>
+                    </li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ username }}<b class="caret"></b></a>
+                            <ul class="dropdown-menu dropdown-tasks">
+                                <li class="active"><a href=""></a>
+                                </li>
+                                <li><a href="/changepassword/">Change Password</a>
+                                </li>
+                                <li><a href="/accounts/logout/">Logout</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+<div class="row">
+    
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            <small></small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/home/">Home</a>
+                </li>
+                <li class="active">Courses</li>
+            </ol>
+        </div>
+    
+    </div>
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header">COURSES
+                    <small><b>{{ branch }}</b> {{ current_semester }}</small>
+                <!--</h1>
+                <p>This is a great place to start off with a short and sweet description of your company, organization, or whatever purpose your website is serving. Keep it friendly, engaging, but short enough to where you won't lose your reader!</p>
+                <p>If you need a bit more space to describe what is going on, we recommend putting a picture in this section. Use the
+                    <code>pull-right</code>class on the image to make it look good!</p>-->
+            </div>
+            <!--
+            <div class="col-lg-12">
+                <h2 class="page-header">Our Team</h2>
+            </div>-->
+
+        </div>
+
+        <div class="row">
+		
+			{% for course in course_list %}
+				<div class="col-lg-4 col-sm-6">
+                <h3>
+					<b>{{ course.Course_Name }}</b>
+					<small><b>{{ course.Course_Number }}</b></small>
+                </h3>
+				{% for user in course.Course_Teachers.all %}
+					<p><b><ul><a href="{{ user.profile.user_url }}"><b>{{ user.first_name }} {{ user.last_name }}<ul></ul></b></a>
+						</ul></p>
+				{% endfor %}
+				<form role="form" action="/coursematerial/" method="post">{% csrf_token %}
+					<input type="text" name="selected_course" value={{ course.Course_Name }} hidden="hidden">
+					<button type="submit" class="btn btn-primary">View Course Material</button>
+				</form>
+				<br></br>
+				{% for group in user.groups.all %}
+						{% if group.name == 'Teachers' %}
+            
+				<form role="form" action="/material_details/" method="post">{% csrf_token %}
+                   
+                    <button type="submit" class="btn btn-primary">Upload New Material</button>
+                    <input type="hidden" name="selected_course" value={{ course.Course_Name }}>
+					
+                </form>
+                <hr></hr>
+			
+				{% endif %}
+			{% endfor %}
+			
+				</div>
+			{% endfor %}
+		</div>
+		
+        
+			
+			
+<!--             <div class="col-lg-4 col-sm-6">
+                <img class="img-circle img-responsive" src="http://qarc.cs.berkeley.edu/Images/Qalypso.png">
+                <h3>Computer Architecture
+                    <small>CS222</small>
+                </h3>
+                <p><b><li><a href="http://172.16.1.4/index.php/schools-and-centers/engineering/computer-science-a-engineering/people/faculty.html"><b>ARIJIT MONDAL<li>SOMNATH TRIPATHI</li></b></a>
+                </li></p>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <img class="img-circle img-responsive" src="http://gmkfreelogos.com/logos/H/img/HardwareLab.gif">
+                <h3>Hardware Lab
+                    <small>CS223</small>
+                </h3>
+                <p><b><li><a href="http://172.16.1.4/index.php/schools-and-centers/engineering/computer-science-a-engineering/people/faculty.html"><b>ARIJIT MONDAL<li>SOMNATH TRIPATHI</li></b></a>
+                </li></p><!--KINDLY ADD RESPECTIVE TEACHERS FROM DATABASE.......like course_Teacher etc
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <img class="img-circle img-responsive" src="http://3.bp.blogspot.com/-z-vi1gOzjmo/TsaoAwouQzI/AAAAAAAAAAA/Iel8cTjdEQY/s200/image34.jpg">
+                <h3>Software Engineering
+                    <small>CS241</small>
+                </h3>
+                <p><b><li><a href="http://172.16.1.4/index.php/schools-and-centers/engineering/computer-science-a-engineering/people/faculty.html"><b>SAMRAT MONDAL</b></a>
+                </li></p>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <img class="img-circle img-responsive" src="http://download.chip.eu/ii/4732590224_f9553ae230.jpg">
+                <h3>System Programming Lab
+                    <small>CS242 </small>
+                </h3>
+                <p><b><li><a href="http://172.16.1.4/index.php/schools-and-centers/engineering/computer-science-a-engineering/people/faculty.html"><b>ASHOK SINGH SAIRAM</b></a>
+                </li></p>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <img class="img-circle img-responsive" src="http://www.leanbusiness.fr/images/optimisation_processus_1.jpg">
+                <h3>Optimisation Techniques
+                    <small>MA251</small>
+                </h3>
+                <p><b><li><a href="http://172.16.1.4/index.php/schools-and-centers/engineering/computer-science-a-engineering/people/faculty.html"><b>NUTAN SINGH TOMAR</b></a>
+                </li></p>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <img class="img-circle img-responsive" src="http://c.cheggcdn.com/covers2/39540000/39546828_1375774277.jpg">
+                    <h3>MACROECONOMICS
+                        <small>HS202</small>
+                    </h3>
+                    <p><b><li><a href="http://172.16.1.4/index.php/schools-and-centers/engineering/computer-science-a-engineering/people/faculty.html"><b>NALIN BHARTI</b></a>
+                    </li></p>
+                    </div>
+             
+        </div>-->
+
+        <hr>
+        <!--
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Company 2013</p>
+                </div>
+            </div>
+        </footer>
+         -->
+
+    </div>
+    <!-- /container -->
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <center>
+                            <li><a href="/help/">About Us</a>
+                                </li>
+                        </center>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript -->
+    <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>COURSES</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS for the 'Round About' Template -->
+    <link href="{% static "css/round-about.css" %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand" href="/home/#myCarousel"><strong>COURSE MANAGEMENT SYSTEM</strong></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/courses/">Courses</a><!--Done-->
+                    </li>
+                    <li><a href="/attendance/">Attendance</a><!--Doing-->
+                    </li>
+                    <li><a href="/polls/">Polls</a><!--Done-->
+                    </li>
+                    <li><a href="/discussion/">Discussion</a>
+                    </li>
+                    <li><a href="/calendar/">Calendar</a>
+                    </li>
+                    <li><a href="/help/">Help</a>
+                    </li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.username }}<b class="caret"></b></a>
+                            <ul class="dropdown-menu dropdown-tasks">
+                                <li class="active"><a href=""></a>
+                                </li>
+                                <li><a href="/changepassword/">Change Password</a>
+                                </li>
+                                <li><a href="/accounts/logout/">Logout</a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+	
+        <div class="container">
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        <small></small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/home/">Home</a>
+                        </li>
+                        <li><a href="/courses/">Courses</a>
+                        </li>
+                        <li class="active">{{ selected_course.Course_Name }}</li>
+                    </ol>
+                </div>
+                
+            </div>
+            <h4>COURSE MATERIAL</h4>
+            <!--CODE HERE-->
+            <!--Enter the code here in order display all the materials uploded by the teacher nad it shoud be downloded by the user-->
+            
+			{% if material_added %}
+		<div class="alert alert-info alert-dismissable">
+<!--                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true" &times;</button>
+ -->                The <a class="alert-link" target="_blank" href="/help/"></a> Study Material was successfully added.
+            </div>
+		{% endif %}
+			
+            <div class="well">
+                <!--APPLY LOOP HERE TO-->
+                
+                {% for material in materials_list %}
+                <form role="form" action="" method="post">{% csrf_token %}
+                   
+                    <button type="submit" class="btn btn-primary">{{ material.Material_Gist }}</button>
+					<ul>Go to <a href="{{ material.Material_Link }}">link.</a></ul>
+                    <!--<button type="submit" class="btn btn-primary">{{ material.Thumbnail }}</button>
+<!-- 					<li><a href="/download/?file_name={{ material.Thumbnail }}">Download</a></li> 
+						{% if material.Thumbnail %}
+                        <li><a href="{% static '{{ material.Thumbnail }}.pdf'  %}">Download</a></li>
+					 <!--<li><img src="/static/assets/uploaded_files/{{ material.thumbnail }}" width="200" /></li>
+                     -->
+                     {% endif %}
+
+					 <input type="hidden" name="selected_course" value={{ selected_course.Course_Name }}>
+					
+                </form>
+                <hr></hr>
+				{% endfor %}
+                 <!--HERE-->
+            </div>
+            
+            <hr>
+            
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p></p>
+                    </div>
+                </div>
+            </footer>
+            
+        </div>
+        <!-- /.container -->
+        
+        <!-- JavaScript -->
+        <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+        
+        
+    </body>
+    
+</html>

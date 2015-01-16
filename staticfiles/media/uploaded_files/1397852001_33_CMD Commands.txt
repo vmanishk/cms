@@ -1,0 +1,3 @@
+<nul (set/p z=) >filename
+
+django-admin.py startproject mysite

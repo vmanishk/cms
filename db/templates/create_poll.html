@@ -1,0 +1,121 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="description" content="">
+                    <meta name="author" content="">
+                        
+                        <title>!!!Successful Submission</title>
+                        
+                        <!-- Bootstrap core CSS -->
+                        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+                            
+                            <!-- Custom CSS for the 'Heroic Features' Template -->
+                            <link href="{% static "css/heroic-features.css" %}" rel="stylesheet">
+                                </head>
+    
+    <body>
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                    <a class="navbar-brand" href="/home/"><strong>COURSE MANAGEMENT SYSTEM</strong></a>
+                </div>
+                
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/courses/">Courses</a>
+                        </li>
+                        <li><a href="/attendance/">Attendance</a>
+                        </li>
+                        <li><a href="/polls/">Polls</a>
+                        </li>
+                        <li><a href="/discussion/">Discussion</a>
+                        </li>
+                        <li><a href="/calendar/">Calendar</a>
+                        </li>
+                        <li><a href="/help/">Help</a>
+                        </li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ username }}<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="active"><a href=""></a>
+                                    </li>
+                                    <li><a href="/changepassword/">Change Password</a>
+                                    </li>
+                                    <li><a href="/loginpage/">logout</a>
+                                    </li>
+                                </ul>
+                                </ul>
+                        </li>
+                    </ul>
+                    </ul>
+                    </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+            
+        </nav>
+         <div class="container">
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        <small></small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/home/">Home</a>
+                        </li>
+						<li><a href="/polls/">Polls</a>
+                        </li>
+                        <li class="active">Add Poll</li>
+                    </ol>
+                </div>
+                
+            </div>
+
+
+
+		<form action="" method="post" enctype="multipart/form-data"> {% csrf_token %}
+		
+			{{form.as_ul}}
+
+            {% for error in form.errors %}
+            {{error}}
+
+            {% endfor %}
+		
+
+		<input type="submit" name="submit" value="Create Poll">
+		</form>	 
+         
+    	<center><ul>
+			<h4><ul><a href="/app/polls/">Cancel</a></ul></h4>
+		</ul></center>
+		<hr><br></br>
+        <!-- /.container -->
+        
+        <!-- JavaScript -->
+        <script src="{% static "js/jquery-1.10.2.js" %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+        
+    </body>
+    
+</html>
+
+

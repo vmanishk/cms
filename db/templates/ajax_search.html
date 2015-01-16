@@ -1,0 +1,11 @@
+{% if articles.count > 0 %}
+
+{% for article in articles %}
+	<ul><a href="/app/get/{{ article.id }}/">{{ article.title }}</a></ul>
+{% endfor %}
+
+{% else %}
+
+<ul> Type to search!!</ul>
+
+{% endif %}

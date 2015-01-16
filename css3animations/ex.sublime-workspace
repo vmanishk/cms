@@ -1,0 +1,974 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"50px",
+				"50px"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 5646,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/demo.js",
+			"settings":
+			{
+				"buffer_size": 1201,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/demo1.scss",
+			"settings":
+			{
+				"buffer_size": 22432,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/demo_styles.scss",
+			"settings":
+			{
+				"buffer_size": 4404,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/demo4.scss",
+			"settings":
+			{
+				"buffer_size": 23311,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/demo2.scss",
+			"settings":
+			{
+				"buffer_size": 22025,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/demo3.scss",
+			"settings":
+			{
+				"buffer_size": 14761,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/mixins.scss",
+			"settings":
+			{
+				"buffer_size": 184,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "scss/main.scss",
+			"settings":
+			{
+				"buffer_size": 162962,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "demo4.html",
+			"settings":
+			{
+				"buffer_size": 5627,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "demo2.html",
+			"settings":
+			{
+				"buffer_size": 5632,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "demo3.html",
+			"settings":
+			{
+				"buffer_size": 5855,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/vince/Sideprojects/Designmodo/Example/demo3.html",
+		"/Users/vince/Sideprojects/Designmodo/Example/demo2.html",
+		"/Users/vince/Sideprojects/Designmodo/Example/css/demo1.css",
+		"/Users/vince/Sideprojects/Designmodo/Example/css/demo2.css",
+		"/Users/vince/Sideprojects/Designmodo/Example/css/demo3.css",
+		"/Users/vince/Sideprojects/Designmodo/Example/css/demo4.css",
+		"/Users/vince/Sideprojects/Designmodo/Example/css/demo_styles.css",
+		"/Users/vince/Sideprojects/Designmodo/Example/css/main.css",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/demo_styles.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/main.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/mixins.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/demo3.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/index.html",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/demo2.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/demo4.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/demo1.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/js/vendor/modernizr.custom.js",
+		"/Users/vince/Sideprojects/Designmodo/Example/js/plugins.js",
+		"/Users/vince/Sideprojects/Designmodo/Example/js/demo.js",
+		"/Users/vince/Sideprojects/Designmodo/Example/demo4.html",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/fx_demo2.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/fx_demo3.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/fx_demo4.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/fx_demo1.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/js/page-dependant/ex4.js",
+		"/Users/vince/Sideprojects/Designmodo/Example/js/page-dependant/ex3.js",
+		"/Users/vince/Sideprojects/Designmodo/Example/js/page-dependant/ex2.js",
+		"/Users/vince/Sideprojects/Designmodo/Example/js/page-dependant/ex1.js",
+		"/Users/vince/Sideprojects/Designmodo/Example/ex.sublime-workspace",
+		"/Users/vince/Sideprojects/Designmodo/Example/css/normalize.css",
+		"/Users/vince/Sideprojects/Designmodo/Example/js/vendor/jquery-1.10.2.min.js",
+		"/Users/vince/Sideprojects/Designmodo/Example/js/vendor/modernizr-2.6.2.min.js",
+		"/Users/vince/Sideprojects/Designmodo/Example/ex2.html",
+		"/Users/vince/Sideprojects/Designmodo/Example/ex4.html",
+		"/Users/vince/Sideprojects/Designmodo/Example/ex3.html",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/fx_ex1.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/base.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/fx_ex4.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/style_ex2.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/style_ex3.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/style_ex1.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/style_ex4.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/ex_old1.html",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/fx_ex2.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/scss/fx_ex3.scss",
+		"/Users/vince/Sideprojects/Designmodo/Example/css/style.css",
+		"/Users/vince/Work/vtcreative/Sources/index_compressed.php",
+		"/Users/vince/Work/vtcreative/Sources/library/scss/_481up.scss",
+		"/Users/vince/Work/vtcreative/Sources/library/scss/404.scss",
+		"/Users/vince/Work/vtcreative/Sources/library/js/404.js",
+		"/Users/vince/Work/vtcreative/Sources/404.html",
+		"/Users/vince/Work/vtcreative/Sources/library/scss/_768up.scss",
+		"/Users/vince/Work/vtcreative/Sources/library/scss/_1240up.scss",
+		"/Users/vince/Work/vtcreative/Sources/library/scss/_1030up.scss",
+		"/Users/vince/Work/vtcreative/Sources/library/php/twitter-init.php",
+		"/Users/vince/Work/vtcreative/Sources/library/js/IE/IEscripts.js",
+		"/Users/vince/Work/vtcreative/Sources/library/scss/ie.scss",
+		"/Users/vince/Work/vtcreative/Sources/library/js/main-save.js",
+		"/Users/vince/Work/vtcreative/Sources/library/js/IE/iecore.js",
+		"/Users/vince/Work/vtcreative/Sources/library/js/iemain.js",
+		"/Users/vince/Work/vtcreative/Sources/library/js/plugins.js",
+		"/Users/vince/Work/vtcreative/Sources/library/php/twitter-feeds.php",
+		"/Users/vince/Work/vtcreative/Sources/library/img/mask-circle-moz.svg",
+		"/Users/vince/Work/vtcreative/Sources/library/php/TweetPHP.php",
+		"/Users/vince/Work/vtcreative/Sources/library/php/twitteroauth/twitter.php",
+		"/Users/vince/Work/vtcreative/Sources/library/php/twitteroauth/twitteroauth.php",
+		"/Users/vince/Work/vtcreative/Sources/index.html",
+		"/Users/vince/Work/vtcreative/Sources/library/js/kinetics.js",
+		"/Users/vince/Work/vtcreative/Sources/library/js/parallax.js",
+		"/Users/vince/Work/vtcreative/Sources/library/js/backgrounds.js",
+		"/Users/vince/Work/vtcreative/Sources/library/js/core.js",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/scss/_768up.scss",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/scss/_1030up.scss",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/scss/_1240up.scss",
+		"/Users/vince/Downloads/onepage-scroll-master/Demo/demo.html",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/js/pages-dependant/home.js",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/footer.php",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/search.php",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/404.php",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/scss/_backgrounds.scss",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/js/jquery.flexslider-min.js",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/modal/drop-shadow.htc",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/modal/sepia.htc",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/scss/style.scss",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/pages-templates/page-contact.php",
+		"/Users/vince/Desktop/db.db",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/pages-templates/page-recettes.php",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/header.php",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/pages-templates/page-accueil.php",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/js/pages-dependant/apropos.js",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/scss/plugins/flexslider.scss",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/scss/_mixins.scss",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/js/pages-dependant/cheques.js",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/pages-templates/page-achat.php",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/js/pages-dependant/services.js",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/pages-templates/page-services.php",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/pages-templates/page-apropos.php",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/js/scripts.js",
+		"/Users/vince/Work/Housekitchen/SOURCES/housekitchen.fr/wp-content/themes/hk/library/scss/_base.scss"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"-webkit-",
+			"webkit",
+			"overla",
+			"transi",
+			"@include transition(all .2s ease-in-out);",
+			"tran",
+			"*********************/",
+			"/*********************",
+			"/*********************\n.nav-el::before anim\n*********************/",
+			"/* Overlay Keyframe */",
+			"/* animated inactive_reverse el */",
+			"/* animated active_reverse el */",
+			"/* animated inactive el */",
+			"/* animated active el */",
+			"/* ::before background animation */",
+			"/* ::before background animation: */",
+			"transitio",
+			" fx-el_topleft ",
+			"<button class=\"close\"><span class=\"icon-cancel\"></span></button>",
+			".li_",
+			"-webkit-",
+			"button",
+			"content",
+			"green",
+			"1.2s",
+			"noscro",
+			"-webkit-",
+			"first-of",
+			"purple",
+			"green",
+			"purple",
+			"green",
+			".butto",
+			"p",
+			"text-align: center;",
+			"nav",
+			"smooth",
+			"<a href=\"#\" ",
+			"content",
+			"wrap",
+			"index.html",
+			"ex4.html",
+			"ex3.html",
+			"ex2.html",
+			"aside",
+			"<a href=\"#\" class=\"close\"><span class=\"icon-cancel\"></span></a>",
+			"ex-nav",
+			"<a href=\"#\" class=\"close\"><span class=\"icon-cancel\"></span></a>",
+			"-webkit-",
+			"rotate",
+			"z-index",
+			".active",
+			"webkit",
+			"button",
+			".ex-nav",
+			"purple",
+			"blue",
+			"green",
+			"opacity: 0;",
+			"opacity: 1;",
+			"color: transparent;",
+			"color: #FFF;",
+			"color: transparent;",
+			"hover",
+			"opacity",
+			"unify",
+			"opacity",
+			"inactive",
+			"green",
+			"content",
+			"button",
+			"br",
+			"5",
+			"close",
+			"margin",
+			"rotate",
+			"green2",
+			"purple",
+			"blue",
+			"nav",
+			"margin",
+			"margin-top",
+			"clearfix",
+			"#19816b",
+			"  color: inherit;\n  color: inherit;\ncancel",
+			"  color: inherit;\ncolor",
+			"color",
+			"close",
+			"53",
+			"50",
+			"53",
+			"52.5%",
+			"50%",
+			"style",
+			"content",
+			"old-con",
+			"cache",
+			".tweet",
+			"design-",
+			"design-mo",
+			"ref-",
+			"overla",
+			"overlay-",
+			"img",
+			"ribbons/",
+			"form",
+			"#phone",
+			"textarea",
+			"oldcontent",
+			"gaq",
+			"deve",
+			"preview",
+			"modal",
+			"portfo",
+			"visibi",
+			"portfoli",
+			"portfol",
+			"portfo",
+			"#portfo",
+			"md-c",
+			"portfol",
+			"portfolio",
+			"modal",
+			"state",
+			"ipad_keyboard_checker",
+			"rel=",
+			"table",
+			"cell"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"moz",
+			"transition: all .2s ease-in-out;\n-moz-transition: all .2s ease-in-out;\n-webkit-transition: all .2s ease-in-out;",
+			"******************************/",
+			"/******************************",
+			"/*********************\n.nav-el::before anim + reverse\n*********************/",
+			"/*********************\n.overlay anim\n*********************/",
+			"/*********************\n.nav-el.inactive reverse\n*********************/",
+			"/*********************\n.nav-el.active reverse\n*********************/",
+			"/*********************\n.nav-el.inactive anim\n*********************/",
+			"/*********************\n.nav-el.active anim\n*********************/",
+			"/*********************\n.nav-el::before anim\n*********************/",
+			" fx-el_topleft-inactive ",
+			"<button class=\"close\"><span class=\"mfg-cancel\"></span></button>",
+			".icon-",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"blue",
+			"1.6s",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"-moz-",
+			"",
+			"blue",
+			"purple",
+			"blue2",
+			"purple",
+			"blue",
+			"",
+			"<button ",
+			"./",
+			"demo4.html",
+			"demo3.html",
+			"demo2.html",
+			"div",
+			"<button class=\"close\"><span class=\"icon-cancel\"></span></button>",
+			"designmodo-nav",
+			"<button class=\"close\"><span class=\"icon-cancel\"></span></button>",
+			"",
+			"moz",
+			"blue2",
+			"purple",
+			"blue",
+			"",
+			"blue2",
+			"5.3",
+			"5.2",
+			"5.1",
+			"purple",
+			"blue",
+			"green",
+			"green2",
+			"darken(#2980b9, 10%)",
+			"55.1",
+			"55",
+			"54.5",
+			"54",
+			"53.5",
+			"52.5",
+			"52",
+			"50",
+			"53%",
+			"53.5%",
+			"52.5%",
+			"0",
+			"../img/awwwards/",
+			"\"/library",
+			"[]",
+			" === ",
+			"new []",
+			"[]",
+			"Array[]",
+			"rel=\"nofollow\" href=\"#",
+			" font-family: $sans-serif;",
+			" ",
+			"mypath",
+			"handle_2",
+			"progress_2",
+			"length_2",
+			"path_2",
+			"total_frames_2",
+			"current_frame_2",
+			"$blue",
+			"à",
+			"”",
+			"“",
+			"icon2-info",
+			"icon2-plus-1",
+			"icon2-plus",
+			"class=\"offre_link\" target=\"_blank\"",
+			"icon2-info-circled",
+			".svg",
+			"icon2-cancel",
+			"[class^=\"icon2-\"], [class*=\" icon2-\"]",
+			"icon2-",
+			"[class^=\"icon2-\"], [class*=\" icon2-\"]",
+			"dev.vtcreative.org/hkdev",
+			".bt-menu-trigger",
+			".maxi_global_cont.active",
+			"www.housekitchen.fr"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 5646,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1702,
+								1251
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 800.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/demo.js",
+					"settings":
+					{
+						"buffer_size": 1201,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15,
+								46
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "scss/demo1.scss",
+					"settings":
+					{
+						"buffer_size": 22432,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22324,
+								22324
+							],
+							[
+								22378,
+								22378
+							],
+							[
+								22429,
+								22429
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 6022.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "scss/demo_styles.scss",
+					"settings":
+					{
+						"buffer_size": 4404,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								895,
+								895
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "scss/demo4.scss",
+					"settings":
+					{
+						"buffer_size": 23311,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23203,
+								23203
+							],
+							[
+								23254,
+								23254
+							],
+							[
+								23308,
+								23308
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5630.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "scss/demo2.scss",
+					"settings":
+					{
+						"buffer_size": 22025,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21917,
+								21917
+							],
+							[
+								21971,
+								21971
+							],
+							[
+								22022,
+								22022
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5560.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "scss/demo3.scss",
+					"settings":
+					{
+						"buffer_size": 14761,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14653,
+								14653
+							],
+							[
+								14704,
+								14704
+							],
+							[
+								14758,
+								14758
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3838.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "scss/mixins.scss",
+					"settings":
+					{
+						"buffer_size": 184,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								184,
+								184
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "scss/main.scss",
+					"settings":
+					{
+						"buffer_size": 162962,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								36,
+								36
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "demo4.html",
+					"settings":
+					{
+						"buffer_size": 5627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1267,
+								1267
+							],
+							[
+								1380,
+								1380
+							],
+							[
+								1497,
+								1497
+							],
+							[
+								1611,
+								1611
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "demo2.html",
+					"settings":
+					{
+						"buffer_size": 5632,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1687,
+								1687
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "demo3.html",
+					"settings":
+					{
+						"buffer_size": 5855,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1340,
+								1340
+							],
+							[
+								1456,
+								1456
+							],
+							[
+								1574,
+								1574
+							],
+							[
+								1690,
+								1690
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 395.0,
+	"status_bar_visible": true
+}

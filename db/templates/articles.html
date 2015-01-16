@@ -1,0 +1,302 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="description" content="">
+                    <meta name="author" content="">
+                        
+                        <title>Discussions</title>
+                        
+                        <!-- Bootstrap core CSS -->
+                        <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+                            
+                            <!-- Custom CSS for the 'Heroic Features' Template -->
+                            <link href="{% static "css/heroic-features.css" %}" rel="stylesheet">
+                            
+<link rel="canonical" href="http://www.androidpolice.com/" />
+<link rel="next" href="http://www.androidpolice.com/page/2/" />
+<link rel="author" href="https://plus.google.com/107797272029781254158"/>
+<link rel="publisher" href="https://plus.google.com/+AndroidPolice"/>
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Android Police - Android News, Apps, Games, Phones, Tablets" />
+<meta property="og:url" content="http://www.androidpolice.com/" />
+<meta property="og:site_name" content="Android Police - Android News, Apps, Games, Phones, Tablets" />
+  <link rel="pingback" href="http://www.androidpolice.com/xmlrpc.php" />
+  <link rel="shortcut icon" href="/icon.gif" type="image/gif" />
+  <link rel="publisher" href="https://plus.google.com/103876278794381402383" />
+
+
+
+
+
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="description" content="">
+                    <meta name="author" content="">
+                        
+                        <title>Discussion</title>
+                        
+                            
+                            <!-- Add custom CSS here -->
+                            <link href="{% static "css/blog-home.css" %}" rel="stylesheet">
+                            <style type="text/css">
+                                #search1{ float: right; text-align: right;  padding-top:2px; padding-bottom: 10px; }
+                            </style>    
+        </head>
+
+    <body>
+        
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                    <a class="navbar-brand" href="/home/"><strong>COURSE MANAGEMENT SYSTEM</strong></a>
+                </div>
+                
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/courses/">Courses</a>
+                        </li>
+                        <li><a href="/attendance/">Attendance</a>
+                        </li>
+                        <li><a href="/polls/">Polls</a>
+                        </li>
+                        <li><a href="/discussion/">Discussion</a>
+                        </li>
+                        <li><a href="/calendar/">Calendar</a>
+                        </li>
+                        <li><a href="/help/">Help</a>
+                        </li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ username }}<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li class="active"><a href=""></a>
+                                    </li>
+                                    <li><a href="/changepassword/">Change Password</a>
+                                    </li>
+                                    <li><a href="/loginpage/">logout</a>
+                                    </li>
+                                </ul>
+                                </ul>
+                        </li>
+                    </ul>
+                    </ul>
+                    </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+            
+        </nav>
+         <div class="container">
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        <small></small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/home/">Home</a>
+                        </li>
+                        <li class="active">Discussions</li>
+                    </ol>
+                </div>
+                
+            </div>
+        <ul>
+
+
+<div class="" id="post-240423">
+<div class="col-lg-4" id="search1">
+                    <div class="well" >
+                        <h4>Search Discussion</h4>
+                        <div class="input-group">
+                            {% csrf_token %}
+                            <input type="text" id="search" name ="search" class="form-control">
+                                <ul id="search-results">
+
+                                </ul>
+                                <span class="input-group-btn">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    
+                                </span>
+                                </div>
+                        <!-- /input-group -->
+                    </div>
+
+
+<!--</ul>
+        <h3>Search</h3>
+        {% csrf_token %}
+        <input type="text" id="search" name ="search"/>
+        <ul id="search-results">
+
+        </ul>-->
+
+
+
+                    <!-- /well -->
+                    <div class="well">
+                        <h4><a class="btn btn-primary" href="/app/mytop/">My Discussion<span class="glyphicon glyphicon-chevron-right"></span></a></h4><!--Link here the polls which ahve the highest responses-->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled">
+                                    <li>Wish to see all your Discussions?</li><!--Rest polls are connected to the above popular polls link-->
+                                    <!--<li><a href="#dinosaurs">Dinosaurs</a>
+                                     </li>
+                                     <li><a href="#spaceships">Spaceships</a>
+                                     </li>
+                                     <li><a href="#fried-foods">Fried Foods</a>
+                                     </li>
+                                     <li><a href="#wild-animals">Wild Animals</a>
+                                     </li>
+                                     -->
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="well">
+                        <h4><a class="btn btn-primary" href="/app/pop/">Popular Discussions<span class="glyphicon glyphicon-chevron-right"></span></a></h4>
+                        <p>Some of the popular discussions going on !</p>
+                        <!--Link the above part of the code to a new page where the question and options are recorded in the database and then displayed on the page-->
+                    </div>
+                    <!-- /well -->
+                    <div class="well">
+                        <h4><a class="btn btn-primary" href="/app/create/">Add A Discussion<span class="glyphicon glyphicon-chevron-right"></span></a></h4>
+                        <p>Do you wish to create a discussion of yours?</p>
+                        <!--Link the above part of the code to a new page where the question and options are recorded in the database and then displayed on the page-->
+                    </div>
+                    <!-- /well -->
+                </div>
+            </div>
+            
+            <hr>
+
+            {% if articles.count > 0 %}
+
+            {% for article in articles %}
+
+
+            <!-- end .post_comment_box -->
+                        <div class="post_meta">
+              <div class="post_title"><h2><b>{{article.title}}</b></h2></div>
+              <div class="post_info">
+                                                 by <a href="/app/usr/{{article.article_creator}}/" title="username" rel="author">{{ article.article_creator}}</a>   at {{ article.pub_date }}     <br></br>                              </div><!-- end .post_info -->
+                                                 {% if article.thumbnail %}
+                                                  <p><img src="/static/{{article.thumbnail}}" width="400"/></p>
+                                                  {% endif %}
+                                                  <p><h4>{{article.body | lower | truncatewords:"75"}}</h4></p>
+                                                  
+                                                  <form method="post"> {% csrf_token %}
+                                                    <input type="hidden" name="article_id" value="{{article.id}}">
+
+                                                    <p><input type="submit" name="upvote" value="Upvote"><b> : {{ article.num_upvotes }}</b></p>
+                                                  </form>  
+
+
+<div id="ld_jelqhh_57962"><div class="AnswerActionBar ActionBar" id="__w2_voCnMl6_simple_action_bar"><div class="primary_item"><span id="ld_qbadgx_64307"><a class="vote_item_link add_upvote" href="#" action_click="AnswerUpvote" id="__w2_e7Yt5x4_answer_vote_up_link"></a></span></div><div class="action_item"><div id="ld_qbadgx_64308"><a class="downvote" href="#" action_target="{&#039;aid&#039;: 3078486, &#039;type&#039;: &#039;answer&#039;}" action_click="AnswerDownvote" 
+
+
+<p>
+            <div class='clearsafe'></div>
+                      </div><!-- end .post_header -->
+
+          <div class="post_main post_hidden">
+            <div class='post_last_updated'></div>
+            <div class='clear'></div>
+                        <div class="post_content">
+              <p><a href="http://cdn.androidpolice.com/wp-content/uploads/2014/04/nexusae0_111.png"></a></p>
+
+</p><div class="clear"></div>
+<!--<p> <a href="http://www.androidpolice.com/2014/04/08/us-giveaway-win-a-samsung-galaxy-s5-or-htc-one-m8-winners-choice-from-upgradeswap-and-android-police/" class="read_more">
+<div class="excerpt-end"><img src="http://cdn.androidpolice.com/wp-content/themes/ap1/images/read_on.png"></div>
+<p></p></a></p>-->
+
+<a class="btn btn-primary" href="/app/get/{{ article.id }}/"><b>View Comments </b><span class="glyphicon glyphicon-chevron-right"></span></a><b> : {{article.num_comments}}</b>
+            </div> <!-- end .post_content -->
+                                  </div><!-- end .post_main -->
+<b><hr></hr></b>
+          <div class='clear'></div>
+        </div><!-- end .post -->
+        <br></br>
+            {% endfor %}
+            {% endif %}
+            {% if articles.count < 0 %}
+
+
+                <p>No Articles to Discuss</p>
+                <!--<div class="well">
+                        <h4><a class="btn btn-primary" href="/app/create/">Add A Discussion<span class="glyphicon glyphicon-chevron-right"></span></a></h4>
+                        <p>Do you wish to create a discussion of yours?</p>
+                        
+                    </div>-->
+
+            {% endif %}
+
+
+
+            
+        <!-- /.container -->
+        
+        <!-- JavaScript -->
+        <div class="pagination">
+            <span class="step-links">
+                {% if articles.has_previous %}
+                    <a href="?page={{ articles.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ articles.number }} of {{ articles.paginator.num_pages }}.
+                </span>
+
+                {% if articles.has_next %}
+                    <a href="?page={{ articles.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
+
+
+                
+            
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="list-inline">
+                            <center>
+                                <li><a href="/discussion/">Go To Top<a class="footer-menu-divider">&sdot; <a href="/help/">About Us</a>
+                                    </li>
+                            </center>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="{% static "js/jquery-2.0.0.min.js" %}"></script>
+        <script src="{% static "js/ajax.js" %}"></script>
+        <script src="{% static "js/bootstrap.js" %}"></script>
+        
+    </body>
+    
+</html>
